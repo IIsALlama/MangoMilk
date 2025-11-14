@@ -48,6 +48,8 @@ bld/
 [Ll]ogs/
 
 builds/
+MangoMilk/
+imgui.ini
 
 # Build results on 'Bin' directories
 **/[Bb]in/*
