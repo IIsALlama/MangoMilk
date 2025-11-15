@@ -36,7 +36,16 @@
     <ClCompile Include="include\imgui\imgui_widgets.cpp">
       <Filter>include</Filter>
     </ClCompile>
-    <ClCompile Include="source\main.cpp">
+    <ClCompile Include="game_render.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="style.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="settings.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -67,6 +76,15 @@
     </ClInclude>
     <ClInclude Include="include\imgui\imconfig.h">
       <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="game_render.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="style.h">
+      <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
