@@ -2,6 +2,7 @@
 
 #include <string>
 #include <fstream>
+#include <thread>
 
 #include <GLEW/glew.h>
 #include <GLFW/glfw3.h>
@@ -14,10 +15,7 @@
 #include <assert.h>
 
 #include "debugging.h"
-#include "entity.h"
-#include "game_render.h"
-#include "game_manager.h"
-#include "component.h"
-#include "transform.h"
+#include "Game.h"
+#include "ECS.h"
 
 using namespace MangoMilk;

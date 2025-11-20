@@ -16,6 +16,18 @@
     <Filter Include="headers\include">
       <UniqueIdentifier>{dc9654b2-aea3-4212-b004-6c27368c08e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\Game">
+      <UniqueIdentifier>{6f3a88cf-5d8b-427f-80dd-6b33346d54c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\ECS">
+      <UniqueIdentifier>{eba34de2-333b-4131-902a-3f4aa5bd4b14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Debug">
+      <UniqueIdentifier>{370107d0-22df-4297-bd42-f4d2aa61daed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Maths">
+      <UniqueIdentifier>{ca91d20d-45fa-40c6-b99b-1241021f153c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\imgui\imgui.cpp">
@@ -39,34 +51,43 @@
     <ClCompile Include="include\imgui\imgui_widgets.cpp">
       <Filter>include</Filter>
     </ClCompile>
-    <ClCompile Include="game_render.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="settings.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="entity.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="debugging.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="game_manager.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="maths.h">
       <Filter>headers</Filter>
     </ClCompile>
-    <ClCompile Include="maths.cpp">
-      <Filter>source</Filter>
+    <ClCompile Include="game_render.cpp">
+      <Filter>source\Game</Filter>
     </ClCompile>
-    <ClCompile Include="transform.cpp">
-      <Filter>source</Filter>
+    <ClCompile Include="game_manager.cpp">
+      <Filter>source\Game</Filter>
     </ClCompile>
     <ClCompile Include="component.cpp">
+      <Filter>source\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>source\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="transform.cpp">
+      <Filter>source\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="debugging.cpp">
+      <Filter>source\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="maths.cpp">
+      <Filter>source\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="test_component.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="time.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteRenderer.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -117,6 +138,21 @@
       <Filter>headers</Filter>
     </ClInclude>
     <ClInclude Include="component.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>headers\include</Filter>
+    </ClInclude>
+    <ClInclude Include="ECS.h">
+      <Filter>headers\include</Filter>
+    </ClInclude>
+    <ClInclude Include="MangoMilk.h">
+      <Filter>headers\include</Filter>
+    </ClInclude>
+    <ClInclude Include="time.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteRenderer.h">
       <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>

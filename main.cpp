@@ -60,6 +60,10 @@ int Initialize() // Initialize Libraries
     return 0;
 }
 
+void NewEntity() {
+    Entity* e = new Entity("Entity");
+}
+
 void window_viewport()
 {
     ImGuiIO io = ImGui::GetIO();
@@ -107,14 +111,30 @@ void window_hierarchy()
     ImGui::BeginChild("Scrolling");
     
     vector<Entity*> entities = GameManager::GetEntities();
+    int id = 0;
     for (size_t i = 0; i < entities.size(); i++)
     {
         Entity* entity = entities[i];
+
+        ImGui::PushID(id);
+
         if (ImGui::Button(entity->name, ImVec2(200, 20))) {
             selectedEntity = entity;
         }
+
+        ImGui::PopID();
+        id++;
     }
+
+    if (ImGui::BeginPopupContextWindow())
+    {
+        ImGui::Text("Create New:");
+        if (ImGui::MenuItem("Entity")) { NewEntity(); };
+        ImGui::EndPopup();
+    }
+
     ImGui::EndChild();
+
 
     ImGui::End();
 }
@@ -146,13 +166,25 @@ void window_console()
     ImGui::End();
 }
 
+void OnPlay() {
+    
+}
+
+void OnStop() {
+    
+}
+
 void window_game_view() 
 {
-    ImGui::Begin("Game View");
+    ImGui::Begin("Game View", NULL, ImGuiWindowFlags_MenuBar);
 
     const float window_width = ImGui::GetContentRegionAvail().x;
     const float window_height = ImGui::GetContentRegionAvail().y;
     GameRender::Rescale(window_width, window_height);
+
+    if (ImGui::Button("Play")) {
+        OnPlay();
+    }
 
     glViewport(0, 0, window_width, window_height);
     ImVec2 pos = ImGui::GetCursorScreenPos();
@@ -163,6 +195,7 @@ void window_game_view()
         ImVec2(0, 1),
         ImVec2(1, 0)
     );
+
 
     ImGui::End();
 }
@@ -188,6 +221,28 @@ void window_scene_view()
     ImGui::End();
 }
 
+void window_menubar() {
+    if (ImGui::BeginMainMenuBar()) {
+        if (ImGui::BeginMenu("File")) {
+            if (ImGui::MenuItem("Create")) {
+            }
+            if (ImGui::MenuItem("Open", "Ctrl+O")) {
+            }
+            if (ImGui::MenuItem("Save", "Ctrl+S")) {
+            }
+            if (ImGui::MenuItem("Save as..")) {
+            }
+            ImGui::EndMenu();
+        }
+        if (ImGui::BeginMenu("Edit")) {
+            if (ImGui::MenuItem("Settings")) {
+            }
+            ImGui::EndMenu();
+        }
+        ImGui::EndMainMenuBar();
+    }
+}
+
 int main()
 {
     //Initialize
@@ -207,9 +262,6 @@ int main()
     // Render Loop
     while (!glfwWindowShouldClose(window))
     {
-        // Input handling
-        glfwPollEvents();
-
         // Create Frame
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
@@ -217,10 +269,13 @@ int main()
 
         ImGui::DockSpaceOverViewport();
 
+        glfwPollEvents();
+
         glClear(GL_COLOR_BUFFER_BIT);
 
         // Window GUIs
         //window_viewport();
+        window_menubar();
 
         window_game_view();
         window_scene_view();
@@ -232,7 +287,10 @@ int main()
         
         // Render
         ImGui::Render();
-        GameRender::Render ();
+
+        GameManager::GameLoop();
+
+        //Debug::Log("AAQAA");
 
         // End Of Render Loop
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

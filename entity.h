@@ -4,14 +4,11 @@
 using std::vector;
 #include <iostream>
 
-#include "game_manager.h"
-#include "component.h"
-#include "transform.h"
+#include "Game.h"
+#include "ECS.h"
 #include "maths.h"
 
 namespace MangoMilk {
-	class Transform;
-	class Component;
 
 	class Entity
 	{

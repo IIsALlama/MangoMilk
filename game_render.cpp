@@ -91,6 +91,8 @@ namespace MangoMilk {
                 Vector2 pos = entity->transform->position;
                 Vector2 scale = entity->transform->scale;
 
+                glm::mat4 projection = glm::ortho(0.0f, 800.0f, 600.0f, 0.0f, -1.0f, 1.0f);
+
                 glBegin(GL_TRIANGLES);
                 glVertex2f(pos.x-0.5f * scale.x, pos.y-0.5f * scale.y);
                 glVertex2f(pos.x-0.5f * scale.x, pos.y+0.5f * scale.y);

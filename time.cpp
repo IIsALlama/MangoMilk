@@ -1,0 +1,5 @@
+namespace MangoMilk {
+	namespace Time {
+		
+	}
+}

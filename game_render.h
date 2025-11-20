@@ -1,14 +1,14 @@
 #pragma once
 
-#include "game_manager.h"
-#include "entity.h"
-#include "transform.h"
+#include "Game.h"
+#include "ECS.h"
 
 #include <GLEW/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 
-#include <vector>
+#include <glm/glm.hpp>
+#include <glm/ext/matrix_clip_space.hpp>
 
 namespace MangoMilk {
 	namespace GameRender {

@@ -12,14 +12,8 @@ namespace MangoMilk {
 			return entities;
 		}
 
-		int GameLoop() {
-			//GameRender::Initialize();
-
-			while (true) {
-				//GameRender::Render();
-			}
-
-			//GameRender::Terminate();
+		void GameLoop() {
+			GameRender::Render();
 		}
 	}
 }

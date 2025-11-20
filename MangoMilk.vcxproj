@@ -145,10 +145,18 @@
     <ClCompile Include="maths.cpp" />
     <ClCompile Include="maths.h" />
     <ClCompile Include="settings.cpp" />
+    <ClCompile Include="SpriteRenderer.cpp" />
+    <ClCompile Include="test_component.cpp" />
+    <ClCompile Include="time.cpp" />
     <ClCompile Include="transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="component.h" />
+    <ClInclude Include="ECS.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="MangoMilk.h" />
+    <ClInclude Include="SpriteRenderer.h" />
+    <ClInclude Include="time.h" />
     <ClInclude Include="transform.h" />
     <ClInclude Include="debugging.h" />
     <ClInclude Include="entity.h" />
