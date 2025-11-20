@@ -1,16 +1,19 @@
 
 #include "main.h"
-#include "style.h"
-#include "game_render.h"
+
+const ImVec4 COLOUR_ERROR = ImVec4(1.0f, 0.0f, 0.0f, 1.0f);
+const ImVec4 COLOUR_WARNING = ImVec4(1.0f, 1.0f, 0.8f, 1.0f);
+const ImVec4 COLOUR_MESSAGE = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
 
 GLFWwindow* window;
+Entity* selectedEntity = NULL;
 
-bool fileExists(const std::string& filename) {
+bool FileExists(const std::string& filename) {
     std::ifstream file(filename);
     return file.good();
 }
 
-int initialize() // Initialize Libraries
+int Initialize() // Initialize Libraries
 {
     // Initialize GLFW
     if (!glfwInit())
@@ -52,7 +55,7 @@ int initialize() // Initialize Libraries
     
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init();
-    game_render_initialize();
+    GameRender::Initialize();
 
     return 0;
 }
@@ -79,6 +82,21 @@ void window_inspector()
 {
     ImGui::Begin("Inspector");
 
+    if (selectedEntity != NULL) {
+        ImGui::Text(selectedEntity->name);
+
+        vector<Component*> components = selectedEntity->GetAllComponents();
+        for (size_t i = 0; i < components.size(); i++)
+        {
+            const char* componentName = components[i]->GetName();
+            ImGui::BeginChild(componentName);
+            ImGui::Text(componentName);
+
+
+            ImGui::EndChild();
+        }
+    }
+
     ImGui::End();
 }
 
@@ -86,12 +104,44 @@ void window_hierarchy()
 {
     ImGui::Begin("Hierarchy");
 
+    ImGui::BeginChild("Scrolling");
+    
+    vector<Entity*> entities = GameManager::GetEntities();
+    for (size_t i = 0; i < entities.size(); i++)
+    {
+        Entity* entity = entities[i];
+        if (ImGui::Button(entity->name, ImVec2(200, 20))) {
+            selectedEntity = entity;
+        }
+    }
+    ImGui::EndChild();
+
     ImGui::End();
 }
 
 void window_console()
 {
     ImGui::Begin("Console");
+
+    ImGui::BeginChild("Scrolling");
+    for (int n = 0; n < Debug::GetLogSize(); n++) {
+        Debug::LogMessage* log = Debug::GetLog(n);
+        switch (Debug::GetLog(n)->type)
+        {
+        default:
+            break;
+        case Debug::LogType::Message:
+            ImGui::TextColored(COLOUR_MESSAGE, Debug::GetLog(n)->msg, n);
+            break;
+        case Debug::LogType::Warning:
+            ImGui::TextColored(COLOUR_WARNING, Debug::GetLog(n)->msg, n);
+            break;
+        case Debug::LogType::Error:
+            ImGui::TextColored(COLOUR_ERROR, Debug::GetLog(n)->msg, n);
+            break;
+        }
+    }
+    ImGui::EndChild();
 
     ImGui::End();
 }
@@ -102,12 +152,12 @@ void window_game_view()
 
     const float window_width = ImGui::GetContentRegionAvail().x;
     const float window_height = ImGui::GetContentRegionAvail().y;
-    game_render_rescale(window_width, window_height);
+    GameRender::Rescale(window_width, window_height);
 
     glViewport(0, 0, window_width, window_height);
     ImVec2 pos = ImGui::GetCursorScreenPos();
     ImGui::GetWindowDrawList()->AddImage(
-        (void*)game_render_texture,
+        (void*)GameRender::outputTexture,
         ImVec2(pos.x, pos.y),
         ImVec2(pos.x + window_width, pos.y + window_height),
         ImVec2(0, 1),
@@ -123,12 +173,12 @@ void window_scene_view()
 
     const float window_width = ImGui::GetContentRegionAvail().x;
     const float window_height = ImGui::GetContentRegionAvail().y;
-    game_render_rescale(window_width, window_height);
+    GameRender::Rescale(window_width, window_height);
 
     glViewport(0, 0, window_width, window_height);
     ImVec2 pos = ImGui::GetCursorScreenPos();
     ImGui::GetWindowDrawList()->AddImage(
-        (void*)game_render_texture,
+        (void*)GameRender::outputTexture,
         ImVec2(pos.x, pos.y),
         ImVec2(pos.x + window_width, pos.y + window_height),
         ImVec2(0, 1),
@@ -141,9 +191,18 @@ void window_scene_view()
 int main()
 {
     //Initialize
-    if (initialize() == -1) {
+    if (Initialize() == -1) {
         return -1;
     }
+
+    Debug::Log("Test log");
+    Debug::LogWarning("Test Warning");
+    Debug::LogError("Test Error");
+
+    Entity* e1 = new Entity("Big Square");
+    Entity* e2 = new Entity("Small Square");
+    e2->transform->scale = Vector2(0.2f, 0.2f);
+    e2->transform->position = Vector2(0.7f, 0.5f);
 
     // Render Loop
     while (!glfwWindowShouldClose(window))
@@ -173,7 +232,7 @@ int main()
         
         // Render
         ImGui::Render();
-        game_render();
+        GameRender::Render ();
 
         // End Of Render Loop
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -183,7 +242,7 @@ int main()
     ImGui::SaveIniSettingsToDisk("layout.ini");
 
     //Terminate
-    game_render_terminate();
+    GameRender::Terminate();
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();

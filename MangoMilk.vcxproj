@@ -129,6 +129,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="component.cpp" />
+    <ClCompile Include="component_transform.cpp" />
+    <ClCompile Include="debugging.cpp" />
+    <ClCompile Include="entity.cpp" />
+    <ClCompile Include="game_manager.cpp" />
     <ClCompile Include="game_render.cpp" />
     <ClCompile Include="include\imgui\imgui.cpp" />
     <ClCompile Include="include\imgui\imgui_demo.cpp" />
@@ -138,10 +143,16 @@
     <ClCompile Include="include\imgui\imgui_tables.cpp" />
     <ClCompile Include="include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="maths.cpp" />
+    <ClCompile Include="maths.h" />
     <ClCompile Include="settings.cpp" />
-    <ClCompile Include="style.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="component.h" />
+    <ClInclude Include="component_transform.h" />
+    <ClInclude Include="debugging.h" />
+    <ClInclude Include="entity.h" />
+    <ClInclude Include="game_manager.h" />
     <ClInclude Include="game_render.h" />
     <ClInclude Include="include\imgui\imconfig.h" />
     <ClInclude Include="include\imgui\imgui.h" />
@@ -153,7 +164,7 @@
     <ClInclude Include="include\imgui\imstb_textedit.h" />
     <ClInclude Include="include\imgui\imstb_truetype.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="style.h" />
+    <ClInclude Include="MangoMilk.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

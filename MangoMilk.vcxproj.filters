@@ -42,10 +42,28 @@
     <ClCompile Include="main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="style.cpp">
+    <ClCompile Include="settings.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="settings.cpp">
+    <ClCompile Include="component.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="component_transform.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="debugging.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="game_manager.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="maths.h">
+      <Filter>headers</Filter>
+    </ClCompile>
+    <ClCompile Include="maths.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,7 +101,22 @@
     <ClInclude Include="main.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="style.h">
+    <ClInclude Include="entity.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="debugging.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="component_transform.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="game_manager.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MangoMilk.h">
       <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>

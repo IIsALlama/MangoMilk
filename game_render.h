@@ -1,10 +1,14 @@
 #pragma once
 
-#include "main.h"
+#include "MangoMilk.h"
 
-extern unsigned int game_render_texture;
+namespace MangoMilk {
+	namespace GameRender {
+		extern unsigned int outputTexture;
 
-void game_render_initialize();
-void game_render_terminate();
-void game_render_rescale(float width, float height);
-void game_render();
+		void Initialize();
+		void Terminate();
+		void Rescale(float width, float height);
+		void Render();
+	}
+}
