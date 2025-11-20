@@ -1,3 +1,4 @@
+
 #include "component.h"
 
 namespace MangoMilk {
@@ -8,5 +9,4 @@ namespace MangoMilk {
 	void Component::Update() {
 
 	}
-
 }

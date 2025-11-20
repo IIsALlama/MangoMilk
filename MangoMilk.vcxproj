@@ -130,7 +130,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="component.cpp" />
-    <ClCompile Include="component_transform.cpp" />
     <ClCompile Include="debugging.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="game_manager.cpp" />
@@ -146,10 +145,11 @@
     <ClCompile Include="maths.cpp" />
     <ClCompile Include="maths.h" />
     <ClCompile Include="settings.cpp" />
+    <ClCompile Include="transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="component.h" />
-    <ClInclude Include="component_transform.h" />
+    <ClInclude Include="transform.h" />
     <ClInclude Include="debugging.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="game_manager.h" />
@@ -164,7 +164,6 @@
     <ClInclude Include="include\imgui\imstb_textedit.h" />
     <ClInclude Include="include\imgui\imstb_truetype.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="MangoMilk.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,17 +1,18 @@
 #pragma once
 
-#include <iostream>
 #include <vector>
-#include <typeinfo>
-
-//#include "MangoMilk.h"
-#include "component.h"
-#include "component_transform.h"
-#include "game_manager.h"
-
 using std::vector;
+#include <iostream>
+
+#include "game_manager.h"
+#include "component.h"
+#include "transform.h"
+#include "maths.h"
 
 namespace MangoMilk {
+	class Transform;
+	class Component;
+
 	class Entity
 	{
 	private:
@@ -29,5 +30,4 @@ namespace MangoMilk {
 		vector<Component*> GetAllComponents();
 		void UpdateComponents();
 	};
-
 }

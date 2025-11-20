@@ -1,6 +1,8 @@
 
 #include "game_render.h"
 
+using std::vector;
+
 GLsizei W = 800;
 GLsizei H = 600;
 
@@ -10,6 +12,7 @@ unsigned int renderBuffer;
 namespace MangoMilk {
     namespace GameRender {
 
+        bool init;
         unsigned int outputTexture;
 
         void Initialize()
@@ -35,6 +38,12 @@ namespace MangoMilk {
             glBindFramebuffer(GL_FRAMEBUFFER, 0);
             glBindTexture(GL_TEXTURE_2D, 0);
             glBindRenderbuffer(GL_RENDERBUFFER, 0);
+
+            init = true;
+        }
+
+        bool IsInitialized() {
+            return init;
         }
 
         void Terminate()
@@ -42,6 +51,8 @@ namespace MangoMilk {
             glDeleteFramebuffers(1, &frameBuffer);
             glDeleteTextures(1, &outputTexture);
             glDeleteRenderbuffers(1, &renderBuffer);
+
+            init = false;
         }
 
         void _BindFramebuffer()

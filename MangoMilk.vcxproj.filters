@@ -13,6 +13,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="headers\include">
+      <UniqueIdentifier>{dc9654b2-aea3-4212-b004-6c27368c08e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\imgui\imgui.cpp">
@@ -45,13 +48,7 @@
     <ClCompile Include="settings.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="component.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="entity.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="component_transform.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="debugging.cpp">
@@ -64,6 +61,12 @@
       <Filter>headers</Filter>
     </ClCompile>
     <ClCompile Include="maths.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="transform.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="component.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -104,19 +107,16 @@
     <ClInclude Include="entity.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="component.h">
-      <Filter>headers</Filter>
-    </ClInclude>
     <ClInclude Include="debugging.h">
-      <Filter>headers</Filter>
-    </ClInclude>
-    <ClInclude Include="component_transform.h">
       <Filter>headers</Filter>
     </ClInclude>
     <ClInclude Include="game_manager.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="MangoMilk.h">
+    <ClInclude Include="transform.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
       <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>

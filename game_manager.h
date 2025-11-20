@@ -1,7 +1,9 @@
 #pragma once
-#include <iostream>
+
 #include <vector>
 using std::vector;
+
+#include "entity.h"
 
 namespace MangoMilk {
 	class Entity;

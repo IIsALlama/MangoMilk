@@ -11,5 +11,15 @@ namespace MangoMilk {
 		vector<Entity*> GetEntities() {
 			return entities;
 		}
+
+		int GameLoop() {
+			//GameRender::Initialize();
+
+			while (true) {
+				//GameRender::Render();
+			}
+
+			//GameRender::Terminate();
+		}
 	}
 }

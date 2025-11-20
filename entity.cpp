@@ -37,7 +37,7 @@ namespace MangoMilk {
 	template <typename T> Component* Entity::GetComponent() {
 		for (size_t i = 0; i < components.size(); i++)
 		{
-			if (typeid(components[i]) == T) {
+			if (std::is_same<decltype(*components[i]), T>::value) {
 				return components[i];
 			}
 		}
@@ -55,5 +55,4 @@ namespace MangoMilk {
 			components[i]->Update();
 		}
 	}
-
 }

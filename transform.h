@@ -1,5 +1,7 @@
 #pragma once
+
 #include "component.h"
+#include "maths.h"
 
 namespace MangoMilk {
 	class Transform : public Component

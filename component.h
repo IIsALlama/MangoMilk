@@ -1,7 +1,5 @@
 #pragma once
-
 #include <typeinfo>
-#include "maths.h"
 
 namespace MangoMilk {
 	class Entity;

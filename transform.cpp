@@ -1,8 +1,8 @@
-#include "component_transform.h"
+#include "transform.h"
 
 namespace MangoMilk {
+
 	void Transform::Update() {
 
 	}
-
 }
