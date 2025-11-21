@@ -105,14 +105,18 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\GLFW\include;$(ProjectDir)include\GLEW\include;$(ProjectDir)include\GLM;$(ProjectDir)include\imgui;$(ProjectDir)include\imgui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\GLFW\include;$(ProjectDir)include\GLEW\include;$(ProjectDir)include\GLM;$(ProjectDir)include\imgui;$(ProjectDir)include\imgui\backends;$(ProjectDir)include\rfk\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)include\GLFW\lib-vc2022;$(ProjectDir)include\GLEW\lib\Release\x64;$(ProjectDir)include\GLEW\bin\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)include\GLFW\lib-vc2022;$(ProjectDir)include\GLEW\lib\Release\x64;$(ProjectDir)include\GLEW\bin\Release\x64;$(ProjectDir)include\rfk\Bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;glfw3dll.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PreBuildEvent>
+      <Command>"$(SolutionDir)include\rfk\Bin\RefurekuGenerator.exe" --project "$(ProjectDir)RefurekuProject.yaml" --output "$(ProjectDir)Generated"
+</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -145,7 +149,6 @@
     <ClCompile Include="maths.cpp" />
     <ClCompile Include="maths.h" />
     <ClCompile Include="settings.cpp" />
-    <ClCompile Include="SpriteRenderer.cpp" />
     <ClCompile Include="test_component.cpp" />
     <ClCompile Include="time.cpp" />
     <ClCompile Include="transform.cpp" />
@@ -155,7 +158,6 @@
     <ClInclude Include="ECS.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="MangoMilk.h" />
-    <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="time.h" />
     <ClInclude Include="transform.h" />
     <ClInclude Include="debugging.h" />

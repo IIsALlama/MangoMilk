@@ -6,7 +6,6 @@ using std::vector;
 
 #include "Game.h"
 #include "ECS.h"
-#include "maths.h"
 
 namespace MangoMilk {
 

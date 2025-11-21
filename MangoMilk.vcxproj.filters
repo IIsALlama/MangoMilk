@@ -87,9 +87,6 @@
     <ClCompile Include="time.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteRenderer.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\imgui\imgui.h">
@@ -150,9 +147,6 @@
       <Filter>headers\include</Filter>
     </ClInclude>
     <ClInclude Include="time.h">
-      <Filter>headers</Filter>
-    </ClInclude>
-    <ClInclude Include="SpriteRenderer.h">
       <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>

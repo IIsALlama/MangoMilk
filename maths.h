@@ -1,6 +1,5 @@
 #pragma once
 
-
 namespace MangoMilk {
 	class Vector2
 	{
