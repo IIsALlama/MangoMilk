@@ -4,7 +4,7 @@ supportedFileExtensions = [".h", ".hpp"]
 
 # Files contained in the directories of this list will be parsed
 toProcessDirectories = [
-#	'''Path/To/Directory/To/Parse'''
+	'''./source'''
 ]
 
 # Files to parse which are not included in any directory of toParseDirectories
@@ -12,7 +12,7 @@ toProcessFiles = []
 
 # Files contained in the directories of this list will be ignored
 ignoredDirectories = [
-#	'''Path/To/Output/Dir'''
+	'''./generated'''
 ]
 
 # Files not to parse which are not included in any directory of ignoredDirectories
@@ -21,7 +21,7 @@ ignoredFiles = []
 
 [CodeGenUnitSettings]
 # Generated files will be located here
-outputDirectory = '''Path/To/Output/Dir'''
+outputDirectory = '''./generated'''
 
 generatedHeaderFileNamePattern = "##FILENAME##.rfkh.h"
 generatedSourceFileNamePattern = "##FILENAME##.rfks.h"
@@ -39,19 +39,19 @@ cppVersion = 17
 
 # Include directories of the project
 projectIncludeDirectories = [
-#	'''Path/To/RefurekuLibrary/Include''',
-#	'''Path/To/Your/Project/Include'''
+#	'''.include/rfk/Include''',
+#	'''.include/'''
 ]
 
 # Must be one of "msvc", "clang++", "g++"
-compilerExeName = "clang++"
+compilerExeName = "msvc"
 
 # Abort parsing on first encountered error
 shouldAbortParsingOnFirstError = true
 
 # Should all entities be parsed whether they are annotated or not
 shouldParseAllNamespaces = false
-shouldParseAllClasses = false
+shouldParseAllClasses = true
 shouldParseAllStructs = false
 shouldParseAllVariables = false
 shouldParseAllFields = false

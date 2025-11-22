@@ -28,6 +28,9 @@
     <Filter Include="source\Maths">
       <UniqueIdentifier>{ca91d20d-45fa-40c6-b99b-1241021f153c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="settings">
+      <UniqueIdentifier>{13070cfe-f478-40fd-b7b5-63fce43bd10f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\imgui\imgui.cpp">
@@ -51,41 +54,38 @@
     <ClCompile Include="include\imgui\imgui_widgets.cpp">
       <Filter>include</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="settings.cpp">
+    <ClCompile Include="source\settings.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="maths.h">
-      <Filter>headers</Filter>
+    <ClCompile Include="source\time.cpp">
+      <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="game_render.cpp">
-      <Filter>source\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="game_manager.cpp">
-      <Filter>source\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="component.cpp">
+    <ClCompile Include="source\component.cpp">
       <Filter>source\ECS</Filter>
     </ClCompile>
-    <ClCompile Include="entity.cpp">
-      <Filter>source\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="transform.cpp">
-      <Filter>source\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="debugging.cpp">
+    <ClCompile Include="source\debugging.cpp">
       <Filter>source\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="maths.cpp">
+    <ClCompile Include="source\entity.cpp">
+      <Filter>source\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="source\game_manager.cpp">
+      <Filter>source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="source\game_render.cpp">
+      <Filter>source\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="source\maths.cpp">
       <Filter>source\Maths</Filter>
     </ClCompile>
-    <ClCompile Include="test_component.cpp">
-      <Filter>source</Filter>
+    <ClCompile Include="source\transform.cpp">
+      <Filter>source\ECS</Filter>
     </ClCompile>
-    <ClCompile Include="time.cpp">
-      <Filter>source</Filter>
+    <ClCompile Include="source\test_component.cpp">
+      <Filter>source\ECS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,38 +116,52 @@
     <ClInclude Include="include\imgui\imconfig.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="game_render.h">
+    <ClInclude Include="source\component.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="main.h">
+    <ClInclude Include="source\debugging.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="entity.h">
+    <ClInclude Include="source\entity.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="debugging.h">
+    <ClInclude Include="source\game_manager.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="game_manager.h">
+    <ClInclude Include="source\game_render.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="transform.h">
+    <ClInclude Include="source\main.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="component.h">
+    <ClInclude Include="source\maths.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
+    <ClInclude Include="source\time.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="source\transform.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ECS.h">
       <Filter>headers\include</Filter>
     </ClInclude>
-    <ClInclude Include="ECS.h">
+    <ClInclude Include="source\Game.h">
       <Filter>headers\include</Filter>
     </ClInclude>
-    <ClInclude Include="MangoMilk.h">
+    <ClInclude Include="source\MangoMilk.h">
       <Filter>headers\include</Filter>
     </ClInclude>
-    <ClInclude Include="time.h">
-      <Filter>headers</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="include\rfk\RefurekuSettings.toml">
+      <Filter>settings</Filter>
+    </None>
+    <None Include=".gitignore">
+      <Filter>settings</Filter>
+    </None>
+    <None Include="layout_default.ini">
+      <Filter>settings</Filter>
+    </None>
   </ItemGroup>
 </Project>

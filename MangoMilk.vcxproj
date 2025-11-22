@@ -110,11 +110,14 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)include\GLFW\lib-vc2022;$(ProjectDir)include\GLEW\lib\Release\x64;$(ProjectDir)include\GLEW\bin\Release\x64;$(ProjectDir)include\rfk\Bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;glfw3dll.lib;glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)include\GLFW\lib-vc2022;$(ProjectDir)include\GLEW\lib\Release\x64;$(ProjectDir)include\GLEW\bin\Release\x64;$(ProjectDir)include\rfk\Bin;$(ProjectDir)include\rfk\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glfw3dll.lib;glew32.lib;Refureku.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PreBuildEvent>
-      <Command>"$(SolutionDir)include\rfk\Bin\RefurekuGenerator.exe" --project "$(ProjectDir)RefurekuProject.yaml" --output "$(ProjectDir)Generated"
+      <Command>cd "$(ProjectDir)"
+echo "Changed directory to $(ProjectDir)"
+"include\rfk\Bin\RefurekuGenerator.exe" "include\rfk\RefurekuSettings.toml"
+echo "Completed rfk generation"
 </Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
@@ -133,11 +136,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="component.cpp" />
-    <ClCompile Include="debugging.cpp" />
-    <ClCompile Include="entity.cpp" />
-    <ClCompile Include="game_manager.cpp" />
-    <ClCompile Include="game_render.cpp" />
     <ClCompile Include="include\imgui\imgui.cpp" />
     <ClCompile Include="include\imgui\imgui_demo.cpp" />
     <ClCompile Include="include\imgui\imgui_draw.cpp" />
@@ -145,25 +143,19 @@
     <ClCompile Include="include\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="include\imgui\imgui_tables.cpp" />
     <ClCompile Include="include\imgui\imgui_widgets.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="maths.cpp" />
-    <ClCompile Include="maths.h" />
-    <ClCompile Include="settings.cpp" />
-    <ClCompile Include="test_component.cpp" />
-    <ClCompile Include="time.cpp" />
-    <ClCompile Include="transform.cpp" />
+    <ClCompile Include="source\component.cpp" />
+    <ClCompile Include="source\debugging.cpp" />
+    <ClCompile Include="source\entity.cpp" />
+    <ClCompile Include="source\game_manager.cpp" />
+    <ClCompile Include="source\game_render.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\maths.cpp" />
+    <ClCompile Include="source\settings.cpp" />
+    <ClCompile Include="source\test_component.cpp" />
+    <ClCompile Include="source\time.cpp" />
+    <ClCompile Include="source\transform.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="component.h" />
-    <ClInclude Include="ECS.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="MangoMilk.h" />
-    <ClInclude Include="time.h" />
-    <ClInclude Include="transform.h" />
-    <ClInclude Include="debugging.h" />
-    <ClInclude Include="entity.h" />
-    <ClInclude Include="game_manager.h" />
-    <ClInclude Include="game_render.h" />
     <ClInclude Include="include\imgui\imconfig.h" />
     <ClInclude Include="include\imgui\imgui.h" />
     <ClInclude Include="include\imgui\imgui_impl_glfw.h" />
@@ -173,7 +165,23 @@
     <ClInclude Include="include\imgui\imstb_rectpack.h" />
     <ClInclude Include="include\imgui\imstb_textedit.h" />
     <ClInclude Include="include\imgui\imstb_truetype.h" />
-    <ClInclude Include="main.h" />
+    <ClInclude Include="source\component.h" />
+    <ClInclude Include="source\debugging.h" />
+    <ClInclude Include="source\ECS.h" />
+    <ClInclude Include="source\entity.h" />
+    <ClInclude Include="source\Game.h" />
+    <ClInclude Include="source\game_manager.h" />
+    <ClInclude Include="source\game_render.h" />
+    <ClInclude Include="source\main.h" />
+    <ClInclude Include="source\MangoMilk.h" />
+    <ClInclude Include="source\maths.h" />
+    <ClInclude Include="source\time.h" />
+    <ClInclude Include="source\transform.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="include\rfk\RefurekuSettings.toml" />
+    <None Include="layout_default.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
