@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\VariantContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Argument.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ArrayWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Constructor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Destructor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Enum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\EnumBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Field.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Function.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Invokable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\MetaContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\MetaManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Method.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ObjectWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Precompiled.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ReflectionDatabase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ReflectionModule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\TypeCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\TypeData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Variant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\VariantBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Common\Lib\json11.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\VariantPolicy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Argument.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ArgumentConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ArrayVariantContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ArrayWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ArrayWrapperBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ArrayWrapperContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Constructor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ConstructorInvoker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ConstructorInvokerBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Destructor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\DestructorInvoker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\DestructorInvokerBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Enum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\EnumBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\EnumContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Field.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\FieldGetter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\FieldGetterBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\FieldSetter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\FieldSetterBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Function.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\FunctionInvoker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\FunctionInvokerBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\GlobalGetter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\GlobalGetterBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\GlobalSetter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\GlobalSetterBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Invokable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\InvokableConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Macros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Meta.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\MetaContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\MetaManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\MetaProperty.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\MetaTraits.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Method.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\MethodInvoker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\MethodInvokerBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ObjectWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Precompiled.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ReflectionDatabase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\ReflectionModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\RuntimeMetaProperties.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\TypeCreator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\TypeConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\TypeData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\TypeInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\TypeID.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Variant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\VariantBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\VariantContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\Array.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\EnumContainer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\FieldGetter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\FieldSetter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\Function.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\FunctionInvoker.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\GlobalGetter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\GlobalSetter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\Invokable.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\MetaManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\MetaProperty.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\Method.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\MethodInvoker.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\ReflectionDatabase.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\Type.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\TypeCreator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\TypeData.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\TypeInfo.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\TypeUnpacker.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\Variant.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\VariantContainer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\VariantContainerStandardTypes.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\VoidFunctionInvoker.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\VoidMethodInvoker.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\Argument.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\ArrayVariantContainer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\ArrayWrapper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\ArrayWrapperContainer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\Constructor.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\ConstructorInvoker.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\Impl\DestructorInvoker.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Source\Runtime\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{89D3C7CB-3883-314E-B997-BCC0BEDDA359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{01FA330E-8A1E-33A2-9830-0CF21309EA63}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

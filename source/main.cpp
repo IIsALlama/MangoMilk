@@ -259,6 +259,19 @@ int main()
     e2->transform->scale = Vector2(0.2f, 0.2f);
     e2->transform->position = Vector2(0.7f, 0.5f);
 
+
+    ursine::meta::Type testType = typeof(Test);
+    
+    vector<ursine::meta::Field> fields = testType.GetFields();
+
+    std::cout << fields.size();
+
+    for (size_t i = 0; i < fields.size(); i++)
+    {
+        Debug::Log(fields[i].GetName().c_str());
+    }
+    
+
     // Render Loop
     while (!glfwWindowShouldClose(window))
     {

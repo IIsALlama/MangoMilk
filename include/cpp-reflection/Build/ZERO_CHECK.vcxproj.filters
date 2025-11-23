@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Malak\Downloads\CPP-Reflection-master\CPP-Reflection-master\Build\CMakeFiles\5f695cd1da4511670d1a4720615166b8\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{225BA1DD-B671-3732-BFB9-9E374D5AF16C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

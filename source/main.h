@@ -13,6 +13,12 @@
 #include <imgui_impl_opengl3.h>
 
 #include <assert.h>
+#include <cassert>
+
+#include <Runtime/ReflectionModule.h>
+#include <Runtime/Meta.h>
+
+#include <Refureku/Refureku.h>
 
 #include "debugging.h"
 #include "Game.h"
