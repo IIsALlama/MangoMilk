@@ -1,8 +1,7 @@
 #pragma once
 #include <typeinfo>
-#include <Refureku/Refureku.h>
-#include <Runtime/ReflectionModule.h>
-#include <Runtime/Meta.h>
+
+#include <meta/factory.hpp>
 
 namespace MangoMilk {
 	class Entity;
@@ -16,19 +15,7 @@ namespace MangoMilk {
 
 		Entity* entity;
 
-		Meta(Range(0.0f, 100.0f))
-		float testValue = 10.0f;
-
-		int testValue2 = 10;
-
 		const char* GetName();
 		virtual void Update();
-	} Meta(Enable);
-
-	struct Test
-	{
-		int testValue2 = 10;
-
-		Test(void) = default;
-	} Meta(Enable);
+	};
 }

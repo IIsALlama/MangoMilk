@@ -11,14 +11,9 @@
 #include <imgui_internal.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
-
-#include <assert.h>
 #include <cassert>
-
-#include <Runtime/ReflectionModule.h>
-#include <Runtime/Meta.h>
-
-#include <Refureku/Refureku.h>
+#include <meta/factory.hpp>
+#include <meta/meta.hpp>
 
 #include "debugging.h"
 #include "Game.h"

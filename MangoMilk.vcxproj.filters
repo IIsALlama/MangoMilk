@@ -154,9 +154,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="include\rfk\RefurekuSettings.toml">
-      <Filter>settings</Filter>
-    </None>
     <None Include=".gitignore">
       <Filter>settings</Filter>
     </None>
