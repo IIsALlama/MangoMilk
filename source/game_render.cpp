@@ -1,6 +1,9 @@
 
 #include "game_render.h"
 
+import Entity;
+import Transform;
+
 using std::vector;
 
 GLsizei W = 800;

@@ -16,7 +16,6 @@
 #include <neat/Reflection.h>
 #include "debugging.h"
 #include "Game.h"
-#include "entity.h"
 
 using namespace MangoMilk;
 using namespace Neat;

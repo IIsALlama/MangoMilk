@@ -1,16 +1,15 @@
 export module Component;
 #include <typeinfo>
 
-
 namespace MangoMilk {
-	export struct Component
+	export struct Component 
 	{
 	private:
 
 	public:
 		virtual ~Component() = default;
 
-		//Entity* entity;
+		void* entity;
 
 		const char* GetName() {
 			return typeid(*this).name();

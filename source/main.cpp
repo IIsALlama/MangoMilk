@@ -5,6 +5,7 @@ import MangoMilk;
 
 import Transform;
 import Component;
+import Entity;
 
 const ImVec4 COLOUR_ERROR = ImVec4(1.0f, 0.0f, 0.0f, 1.0f);
 const ImVec4 COLOUR_WARNING = ImVec4(1.0f, 1.0f, 0.8f, 1.0f);
@@ -63,10 +64,6 @@ int Initialize() // Initialize Libraries
     GameRender::Initialize();
 
     return 0;
-}
-
-void NewEntity() {
-    Entity* e = new Entity("Entity");
 }
 
 void window_viewport()
@@ -130,14 +127,14 @@ void window_inspector()
                     Vector2* vec2Value = value.value_ptr<Vector2>();
                     ImGui::PushID(id);
                     id++;
-                    if (ImGui::InputFloat(label, &vec2Value->x)) {
+                    if (ImGui::InputFloat("X", &vec2Value->x)) {
                         type->fields[i].set_value(testPtr, value);
                     }
                     ImGui::PopID();
 
                     ImGui::PushID(id);
                     id++;
-                    if (ImGui::InputFloat(label, &vec2Value->y)) {
+                    if (ImGui::InputFloat("Y", &vec2Value->y)) {
                         type->fields[i].set_value(testPtr, value);
                     }
                     ImGui::PopID();
@@ -186,7 +183,7 @@ void window_hierarchy()
     if (ImGui::BeginPopupContextWindow())
     {
         ImGui::Text("Create New:");
-        if (ImGui::MenuItem("Entity")) { NewEntity(); };
+        if (ImGui::MenuItem("Entity")) { GameManager::Instantiate(new Entity("New Entity")); };
         ImGui::EndPopup();
     }
 
@@ -311,8 +308,8 @@ int main()
     Debug::LogWarning("Test Warning");
     Debug::LogError("Test Error");
 
-    Entity* e1 = new Entity("Big Square");
-    Entity* e2 = new Entity("Small Square");
+    Entity* e1 = GameManager::Instantiate(new Entity("Big Square"));
+    Entity* e2 = GameManager::Instantiate(new Entity("Small Square"));
     e2->transform->scale = Vector2(0.2f, 0.2f);
     e2->transform->position = Vector2(0.7f, 0.5f);
 

@@ -69,37 +69,94 @@
     <ClCompile Include="source\debugging.cpp">
       <Filter>source\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="source\entity.cpp">
-      <Filter>source\ECS</Filter>
-    </ClCompile>
     <ClCompile Include="source\game_manager.cpp">
       <Filter>source\Game</Filter>
     </ClCompile>
     <ClCompile Include="source\game_render.cpp">
       <Filter>source\Game</Filter>
     </ClCompile>
+    <ClCompile Include="source\Component.cppm">
+      <Filter>source\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="source\MangoMilk.cppm">
+      <Filter>source\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Transform.cppm">
+      <Filter>source\Modules</Filter>
+    </ClCompile>
     <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
-      <Filter>source\Reflection</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
-      <Filter>source\Reflection</Filter>
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\*.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\*.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\*.cpp">
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Generated\Component.ixx_Reflection.cpp">
-      <Filter>source\Reflection</Filter>
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
-      <Filter>source\Reflection</Filter>
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
-      <Filter>source\Reflection</Filter>
+      <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Component.ixx">
-      <Filter>source\Modules</Filter>
+    <ClCompile Include="Generated\*.cpp">
+      <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\MangoMilk.ixx">
-      <Filter>source\Modules</Filter>
+    <ClCompile Include="Generated\Component.ixx_Reflection.cpp">
+      <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\Transform.ixx">
+    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\*.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Component.ixx_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Entity.cppm">
       <Filter>source\Modules</Filter>
     </ClCompile>
   </ItemGroup>
@@ -132,9 +189,6 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="source\debugging.h">
-      <Filter>headers</Filter>
-    </ClInclude>
-    <ClInclude Include="source\entity.h">
       <Filter>headers</Filter>
     </ClInclude>
     <ClInclude Include="source\game_manager.h">
