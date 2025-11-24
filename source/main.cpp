@@ -3,6 +3,9 @@
 
 import MangoMilk;
 
+import Transform;
+import Component;
+
 const ImVec4 COLOUR_ERROR = ImVec4(1.0f, 0.0f, 0.0f, 1.0f);
 const ImVec4 COLOUR_WARNING = ImVec4(1.0f, 1.0f, 0.8f, 1.0f);
 const ImVec4 COLOUR_MESSAGE = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
@@ -96,8 +99,9 @@ void window_inspector()
         {
             std::string fullComponentName = components[i]->GetName();
 
-            size_t pos = fullComponentName.rfind("::");
-            std::string componentName = (pos == std::string::npos) ? fullComponentName : fullComponentName.substr(pos + 2);
+            unsigned first = fullComponentName.find(" ");
+            unsigned last = fullComponentName.find("[");
+            std::string componentName = fullComponentName.substr(first+1, last - first - 1);
 
             ImGui::BeginChild(componentName.c_str());
             ImGui::Text(componentName.c_str());
@@ -118,6 +122,11 @@ void window_inspector()
                     if (value.type_id() == get_id<int>()) {
                         int* intValue = value.value_ptr<int>();
                         ImGui::Text(to_string(*intValue).c_str());
+                    }
+                    else if (value.type_id() == get_id<Vector2>()) {
+                        Vector2* vec2Value = value.value_ptr<Vector2>();
+                        string str = "X:" + to_string(vec2Value->x) + " Y:" + to_string(vec2Value->y);
+                        ImGui::Text(str.c_str());
                     }
                     else if (value.type_id() == get_id<float>()) {
                         float* floatValue = value.value_ptr<float>();

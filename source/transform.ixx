@@ -1,10 +1,28 @@
 export module Transform;
 
 import Component;
-#include "maths.h"
 
 namespace MangoMilk {
-	export class Transform : Component
+	export class Vector2
+	{
+	private:
+
+	public:
+		float x;
+		float y;
+
+		Vector2(float _x, float _y) {
+			x = _x;
+			y = _y;
+		}
+
+		Vector2() {
+			x = 0.0f;
+			y = 0.0f;
+		}
+	};
+
+	export class Transform : public Component
 	{
 	private:
 
@@ -13,6 +31,9 @@ namespace MangoMilk {
 		Vector2 scale = Vector2(1.0f, 1.0f);
 		float rotation = 0.0f;
 
-		void Update();
+		void Update() {
+
+		};
 	};
+
 }

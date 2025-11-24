@@ -3,7 +3,7 @@
 #include <vector>
 using std::vector;
 
-#include "ECS.h"
+#include "entity.h"
 
 namespace MangoMilk {
 	class Entity;

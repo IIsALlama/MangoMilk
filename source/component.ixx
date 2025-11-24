@@ -1,5 +1,4 @@
 export module Component;
-
 #include <typeinfo>
 
 

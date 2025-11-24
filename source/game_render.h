@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Game.h"
-#include "ECS.h"
+#include "entity.h"
 
 #include <GLEW/glew.h>
 #include <GLFW/glfw3.h>

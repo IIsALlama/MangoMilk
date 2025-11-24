@@ -12,7 +12,7 @@ namespace MangoMilk {
 	}
 
 	void Entity::AddComponent(Component* component) {
-		component->entity = this;
+		//component->entity = this;
 		components.push_back(component);
 	}
 

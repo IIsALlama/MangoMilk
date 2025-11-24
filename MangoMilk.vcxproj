@@ -138,6 +138,7 @@ generate_reflection.bat</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp" />
     <ClCompile Include="include\imgui\imgui.cpp" />
     <ClCompile Include="include\imgui\imgui_demo.cpp" />
     <ClCompile Include="include\imgui\imgui_draw.cpp" />
@@ -145,18 +146,18 @@ generate_reflection.bat</Command>
     <ClCompile Include="include\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="include\imgui\imgui_tables.cpp" />
     <ClCompile Include="include\imgui\imgui_widgets.cpp" />
-    <ClCompile Include="source\component.cpp" />
+    <ClCompile Include="source\Component.ixx" />
     <ClCompile Include="source\debugging.cpp" />
     <ClCompile Include="source\entity.cpp" />
     <ClCompile Include="source\game_manager.cpp" />
     <ClCompile Include="source\game_render.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\MangoMilk.ixx" />
-    <ClCompile Include="source\maths.cpp" />
     <ClCompile Include="source\settings.cpp" />
     <ClCompile Include="source\time.cpp" />
-    <ClCompile Include="Generated\*.cpp" />
-    <ClCompile Include="source\transform.cpp" />
+    <ClCompile Include="Generated\Component.ixx_Reflection.cpp" />
+    <ClCompile Include="Generated\Transform.ixx_Reflection.cpp" />
+    <ClCompile Include="source\Transform.ixx" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\imgui\imconfig.h" />
@@ -168,8 +169,6 @@ generate_reflection.bat</Command>
     <ClInclude Include="include\imgui\imstb_rectpack.h" />
     <ClInclude Include="include\imgui\imstb_textedit.h" />
     <ClInclude Include="include\imgui\imstb_truetype.h" />
-    <ClInclude Include="source\component.h" />
-    <ClInclude Include="source\component.ixx" />
     <ClInclude Include="source\debugging.h" />
     <ClInclude Include="source\entity.h" />
     <ClInclude Include="source\Game.h" />
@@ -177,10 +176,7 @@ generate_reflection.bat</Command>
     <ClInclude Include="source\game_render.h" />
     <ClInclude Include="source\main.h" />
     <ClInclude Include="source\MangoMilk.h" />
-    <ClInclude Include="source\maths.h" />
     <ClInclude Include="source\time.h" />
-    <ClInclude Include="source\transform.h" />
-    <ClInclude Include="source\transform.ixx" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

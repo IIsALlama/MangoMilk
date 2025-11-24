@@ -5,7 +5,10 @@ using std::vector;
 #include <iostream>
 
 #include "Game.h"
-#include "ECS.h"
+#include "entity.h"
+
+import Component;
+import Transform;
 
 namespace MangoMilk {
 
