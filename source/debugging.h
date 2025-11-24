@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <vector>
 using std::vector;
 
@@ -16,14 +17,14 @@ namespace MangoMilk {
 
 		public:
 			LogType type;
-			const char* msg;
+			std::string msg;
 
-			LogMessage(LogType type, const char* msg);
+			LogMessage(LogType type, const std::string& msg);
 		};
 
-		void Log(const char msg[]);
-		void LogWarning(const char msg[]);
-		void LogError(const char msg[]);
+		void Log(const std::string& msg);
+		void LogWarning(const std::string& msg);
+		void LogError(const std::string& msg);
 
 		int GetLogSize();
 		LogMessage* GetLog(int i);

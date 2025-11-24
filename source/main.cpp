@@ -1,6 +1,8 @@
 
 #include "main.h"
 
+import MangoMilk;
+
 const ImVec4 COLOUR_ERROR = ImVec4(1.0f, 0.0f, 0.0f, 1.0f);
 const ImVec4 COLOUR_WARNING = ImVec4(1.0f, 1.0f, 0.8f, 1.0f);
 const ImVec4 COLOUR_MESSAGE = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
@@ -92,10 +94,40 @@ void window_inspector()
         vector<Component*> components = selectedEntity->GetAllComponents();
         for (size_t i = 0; i < components.size(); i++)
         {
-            const char* componentName = components[i]->GetName();
-            ImGui::BeginChild(componentName);
-            ImGui::Text(componentName);
+            std::string fullComponentName = components[i]->GetName();
 
+            size_t pos = fullComponentName.rfind("::");
+            std::string componentName = (pos == std::string::npos) ? fullComponentName : fullComponentName.substr(pos + 2);
+
+            ImGui::BeginChild(componentName.c_str());
+            ImGui::Text(componentName.c_str());
+
+            const Type* type = Neat::get_type(componentName);
+
+            try {
+                AnyPtr testPtr{ components[i], type->id};
+
+                Any value = type->fields[0].get_value(testPtr);
+
+                for (size_t i = 0; i < type->fields.size(); i++)
+                {
+                    Any value = type->fields[i].get_value(testPtr);
+
+                    ImGui::Text(type->fields[i].name.c_str());
+
+                    if (value.type_id() == get_id<int>()) {
+                        int* intValue = value.value_ptr<int>();
+                        ImGui::Text(to_string(*intValue).c_str());
+                    }
+                    else if (value.type_id() == get_id<float>()) {
+                        float* floatValue = value.value_ptr<float>();
+                        ImGui::Text(to_string(*floatValue).c_str());
+                    }
+                }
+            }
+            catch (exception e){
+                Debug::LogError("Component " + componentName + " has no generated reflection data.");
+            }
 
             ImGui::EndChild();
         }
@@ -151,13 +183,13 @@ void window_console()
         default:
             break;
         case Debug::LogType::Message:
-            ImGui::TextColored(COLOUR_MESSAGE, Debug::GetLog(n)->msg, n);
+            ImGui::TextColored(COLOUR_MESSAGE, Debug::GetLog(n)->msg.c_str(), n);
             break;
         case Debug::LogType::Warning:
-            ImGui::TextColored(COLOUR_WARNING, Debug::GetLog(n)->msg, n);
+            ImGui::TextColored(COLOUR_WARNING, Debug::GetLog(n)->msg.c_str(), n);
             break;
         case Debug::LogType::Error:
-            ImGui::TextColored(COLOUR_ERROR, Debug::GetLog(n)->msg, n);
+            ImGui::TextColored(COLOUR_ERROR, Debug::GetLog(n)->msg.c_str(), n);
             break;
         }
     }
@@ -258,6 +290,37 @@ int main()
     Entity* e2 = new Entity("Small Square");
     e2->transform->scale = Vector2(0.2f, 0.2f);
     e2->transform->position = Vector2(0.7f, 0.5f);
+
+    Test* test = new Test(10, 5.0f);
+
+    const Type* type = Neat::get_type<MangoMilk::Test>();
+    AnyPtr testPtr{ test, type->id };
+
+    Any value = type->fields[0].get_value(testPtr);
+
+    Debug::Log(type->name.c_str());
+
+    for (size_t i = 0; i < type->fields.size(); i++)
+    {
+        Any value = type->fields[i].get_value(testPtr);
+
+        Debug::Log(type->fields[i].name.c_str());
+
+        if (value.type_id() == get_id<int>()) {
+            int* intValue = value.value_ptr<int>();
+            Debug::Log(to_string(*intValue).c_str());
+        }
+        else if (value.type_id() == get_id<float>()) {
+            float* floatValue = value.value_ptr<float>();
+            Debug::Log(to_string(*floatValue).c_str());
+        }
+        else if (value.type_id() == get_id<string>()) {
+            Debug::Log(value.value<string>());
+        }
+        else {
+            Debug::Log("Unsupported field type.");
+        }
+    }
 
     // Render Loop
     while (!glfwWindowShouldClose(window))

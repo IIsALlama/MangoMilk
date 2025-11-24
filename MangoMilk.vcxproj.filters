@@ -31,6 +31,9 @@
     <Filter Include="settings">
       <UniqueIdentifier>{13070cfe-f478-40fd-b7b5-63fce43bd10f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\Reflection">
+      <UniqueIdentifier>{21a6d903-5edb-4e14-9b45-da7f35731f09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\imgui\imgui.cpp">
@@ -63,9 +66,6 @@
     <ClCompile Include="source\time.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\component.cpp">
-      <Filter>source\ECS</Filter>
-    </ClCompile>
     <ClCompile Include="source\debugging.cpp">
       <Filter>source\Debug</Filter>
     </ClCompile>
@@ -81,11 +81,17 @@
     <ClCompile Include="source\maths.cpp">
       <Filter>source\Maths</Filter>
     </ClCompile>
-    <ClCompile Include="source\transform.cpp">
-      <Filter>source\ECS</Filter>
+    <ClCompile Include="source\MangoMilk.ixx">
+      <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\test_component.cpp">
-      <Filter>source\ECS</Filter>
+    <ClCompile Include="Generated\*.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="source\component.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\transform.cpp">
+      <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,9 +122,6 @@
     <ClInclude Include="include\imgui\imconfig.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="source\component.h">
-      <Filter>headers</Filter>
-    </ClInclude>
     <ClInclude Include="source\debugging.h">
       <Filter>headers</Filter>
     </ClInclude>
@@ -140,17 +143,23 @@
     <ClInclude Include="source\time.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="source\transform.h">
-      <Filter>headers</Filter>
-    </ClInclude>
-    <ClInclude Include="source\ECS.h">
-      <Filter>headers\include</Filter>
-    </ClInclude>
     <ClInclude Include="source\Game.h">
       <Filter>headers\include</Filter>
     </ClInclude>
     <ClInclude Include="source\MangoMilk.h">
       <Filter>headers\include</Filter>
+    </ClInclude>
+    <ClInclude Include="source\component.ixx">
+      <Filter>source\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="source\transform.ixx">
+      <Filter>source\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="source\transform.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="source\component.h">
+      <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +167,9 @@
       <Filter>settings</Filter>
     </None>
     <None Include="layout_default.ini">
+      <Filter>settings</Filter>
+    </None>
+    <None Include="generate_reflection.bat">
       <Filter>settings</Filter>
     </None>
   </ItemGroup>

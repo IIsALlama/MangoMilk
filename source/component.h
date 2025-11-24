@@ -1,8 +1,6 @@
 #pragma once
 #include <typeinfo>
 
-#include <meta/factory.hpp>
-
 namespace MangoMilk {
 	class Entity;
 

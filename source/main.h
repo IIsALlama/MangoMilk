@@ -12,11 +12,12 @@
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
 #include <cassert>
-#include <meta/factory.hpp>
-#include <meta/meta.hpp>
 
+#include <neat/Reflection.h>
 #include "debugging.h"
 #include "Game.h"
 #include "ECS.h"
 
 using namespace MangoMilk;
+using namespace Neat;
+using namespace std;
