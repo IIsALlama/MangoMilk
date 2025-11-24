@@ -25,14 +25,14 @@
     <Filter Include="source\Debug">
       <UniqueIdentifier>{370107d0-22df-4297-bd42-f4d2aa61daed}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\Maths">
-      <UniqueIdentifier>{ca91d20d-45fa-40c6-b99b-1241021f153c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="settings">
       <UniqueIdentifier>{13070cfe-f478-40fd-b7b5-63fce43bd10f}</UniqueIdentifier>
     </Filter>
     <Filter Include="source\Reflection">
       <UniqueIdentifier>{21a6d903-5edb-4e14-9b45-da7f35731f09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Modules">
+      <UniqueIdentifier>{93f76cac-2ba4-475f-96b1-53d1e8b33f73}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -78,20 +78,29 @@
     <ClCompile Include="source\game_render.cpp">
       <Filter>source\Game</Filter>
     </ClCompile>
-    <ClCompile Include="source\maths.cpp">
-      <Filter>source\Maths</Filter>
-    </ClCompile>
-    <ClCompile Include="source\MangoMilk.ixx">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\*.cpp">
+    <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
       <Filter>source\Reflection</Filter>
     </ClCompile>
-    <ClCompile Include="source\component.cpp">
-      <Filter>source</Filter>
+    <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
     </ClCompile>
-    <ClCompile Include="source\transform.cpp">
-      <Filter>source</Filter>
+    <ClCompile Include="Generated\Component.ixx_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Component.ixx">
+      <Filter>source\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="source\MangoMilk.ixx">
+      <Filter>source\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Transform.ixx">
+      <Filter>source\Modules</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -137,9 +146,6 @@
     <ClInclude Include="source\main.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="source\maths.h">
-      <Filter>headers</Filter>
-    </ClInclude>
     <ClInclude Include="source\time.h">
       <Filter>headers</Filter>
     </ClInclude>
@@ -148,18 +154,6 @@
     </ClInclude>
     <ClInclude Include="source\MangoMilk.h">
       <Filter>headers\include</Filter>
-    </ClInclude>
-    <ClInclude Include="source\component.ixx">
-      <Filter>source\ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="source\transform.ixx">
-      <Filter>source\ECS</Filter>
-    </ClInclude>
-    <ClInclude Include="source\transform.h">
-      <Filter>headers</Filter>
-    </ClInclude>
-    <ClInclude Include="source\component.h">
-      <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

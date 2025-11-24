@@ -108,34 +108,50 @@ void window_inspector()
 
             const Type* type = Neat::get_type(componentName);
 
-            try {
-                AnyPtr testPtr{ components[i], type->id};
+            AnyPtr testPtr{ components[i], type->id};
 
-                Any value = type->fields[0].get_value(testPtr);
+            Any value = type->fields[0].get_value(testPtr);
 
-                for (size_t i = 0; i < type->fields.size(); i++)
-                {
-                    Any value = type->fields[i].get_value(testPtr);
+            int id = 0;
+            for (size_t i = 0; i < type->fields.size(); i++)
+            {
+                Any value = type->fields[i].get_value(testPtr);
 
-                    ImGui::Text(type->fields[i].name.c_str());
+                const char* label = type->fields[i].name.c_str();
 
-                    if (value.type_id() == get_id<int>()) {
-                        int* intValue = value.value_ptr<int>();
-                        ImGui::Text(to_string(*intValue).c_str());
-                    }
-                    else if (value.type_id() == get_id<Vector2>()) {
-                        Vector2* vec2Value = value.value_ptr<Vector2>();
-                        string str = "X:" + to_string(vec2Value->x) + " Y:" + to_string(vec2Value->y);
-                        ImGui::Text(str.c_str());
-                    }
-                    else if (value.type_id() == get_id<float>()) {
-                        float* floatValue = value.value_ptr<float>();
-                        ImGui::Text(to_string(*floatValue).c_str());
-                    }
+                ImGui::Text(label);
+
+                if (value.type_id() == get_id<int>()) {
+                    int* intValue = value.value_ptr<int>();
+                    ImGui::Text(to_string(*intValue).c_str());
+                    ImGui::InputInt(label, intValue);
                 }
-            }
-            catch (exception e){
-                Debug::LogError("Component " + componentName + " has no generated reflection data.");
+                else if (value.type_id() == get_id<Vector2>()) {
+                    Vector2* vec2Value = value.value_ptr<Vector2>();
+                    ImGui::PushID(id);
+                    id++;
+                    if (ImGui::InputFloat(label, &vec2Value->x)) {
+                        type->fields[i].set_value(testPtr, value);
+                    }
+                    ImGui::PopID();
+
+                    ImGui::PushID(id);
+                    id++;
+                    if (ImGui::InputFloat(label, &vec2Value->y)) {
+                        type->fields[i].set_value(testPtr, value);
+                    }
+                    ImGui::PopID();
+                }
+                else if (value.type_id() == get_id<float>()) {
+                    float* floatValue = value.value_ptr<float>();
+
+                    ImGui::PushID(id);
+                    id++;
+                    if (ImGui::InputFloat(label, floatValue)) {
+                        type->fields[i].set_value(testPtr, value);
+                    }
+                    ImGui::PopID();
+                }
             }
 
             ImGui::EndChild();

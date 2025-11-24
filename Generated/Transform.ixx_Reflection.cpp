@@ -15,10 +15,11 @@ namespace Neat
 	static void reflect_types_and_members()
 	{
 add_type(Type{ .name="void", .id=get_id<void>(), .size=0 });
+add_type(Type{ .name="int", .id=get_id<int>(), .size=sizeof(int) });
 add_type(Type{ .name="float", .id=get_id<float>(), .size=sizeof(float) });
 add_type(Type::create<MangoMilk::Transform>("MangoMilk::Transform", get_id<MangoMilk::Transform>(),
 	{ BaseClass{ get_id<MangoMilk::Component>(), Neat::Access::Public },  },
-	{ Field::create<MangoMilk::Transform, MangoMilk::Vector2, &MangoMilk::Transform::position>("position", Neat::Access::Public), Field::create<MangoMilk::Transform, MangoMilk::Vector2, &MangoMilk::Transform::scale>("scale", Neat::Access::Public), Field::create<MangoMilk::Transform, float, &MangoMilk::Transform::rotation>("rotation", Neat::Access::Public),  },
+	{ Field::create<MangoMilk::Transform, MangoMilk::Vector2, &MangoMilk::Transform::position>("position", Neat::Access::Public), Field::create<MangoMilk::Transform, MangoMilk::Vector2, &MangoMilk::Transform::scale>("scale", Neat::Access::Public), Field::create<MangoMilk::Transform, float, &MangoMilk::Transform::rotation>("rotation", Neat::Access::Public), Field::create<MangoMilk::Transform, int, &MangoMilk::Transform::test>("test", Neat::Access::Public),  },
 	{ Method::create<(void (MangoMilk::Transform::*)() )&MangoMilk::Transform::Update, MangoMilk::Transform, void>("Update", Neat::Access::Public),  },
 	{  },
 	{  }
