@@ -25,5 +25,6 @@ namespace MangoMilk {
 
 		int GetLogSize();
 		LogMessage* GetLog(int i);
+		void Window();
 	}
 }

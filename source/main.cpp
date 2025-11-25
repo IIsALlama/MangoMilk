@@ -25,10 +25,6 @@ import Component;
 import Entity;
 import SpriteRenderer;
 
-const ImVec4 COLOUR_ERROR = ImVec4(1.0f, 0.0f, 0.0f, 1.0f);
-const ImVec4 COLOUR_WARNING = ImVec4(1.0f, 1.0f, 0.8f, 1.0f);
-const ImVec4 COLOUR_MESSAGE = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
-
 Colour colour_blue = Colour(0.0f, 0.0f, 1.0f);
 Colour colour_red = Colour(1.0f, 0.0f, 0.0f);
 Colour colour_green = Colour(0.0f, 1.0f, 0.0f);
@@ -102,33 +98,6 @@ void window_viewport()
 void window_assets() 
 {
     ImGui::Begin("Assets");
-
-    ImGui::End();
-}
-
-void window_console()
-{
-    ImGui::Begin("Console");
-
-    ImGui::BeginChild("Scrolling");
-    for (int n = 0; n < Debug::GetLogSize(); n++) {
-        Debug::LogMessage* log = Debug::GetLog(n);
-        switch (Debug::GetLog(n)->type)
-        {
-        default:
-            break;
-        case Debug::LogType::Message:
-            ImGui::TextColored(COLOUR_MESSAGE, Debug::GetLog(n)->msg.c_str(), n);
-            break;
-        case Debug::LogType::Warning:
-            ImGui::TextColored(COLOUR_WARNING, Debug::GetLog(n)->msg.c_str(), n);
-            break;
-        case Debug::LogType::Error:
-            ImGui::TextColored(COLOUR_ERROR, Debug::GetLog(n)->msg.c_str(), n);
-            break;
-        }
-    }
-    ImGui::EndChild();
 
     ImGui::End();
 }
@@ -214,21 +183,6 @@ Entity* GetEntity(MangoMilk::Component* component) {
     return component->CastOwnerPtr<Entity>();
 }
 
-const Type* GetComponentType(MangoMilk::Component* component) {
-    //Get name of component
-    std::string fullComponentName = component->GetName();
-    unsigned first = fullComponentName.find(" ");
-    unsigned last = fullComponentName.find("[");
-    std::string componentName = fullComponentName.substr(first + 1, last - first - 1);
-
-    //Get reflection data
-    const Type* type = Neat::get_type(componentName);
-
-    //AnyPtr typePtr{ component, type->id };
-
-    return type;
-}
-
 int main()
 {
     //Initialize
@@ -271,7 +225,7 @@ int main()
         window_scene_view();
 
         window_assets();
-        window_console();
+        Debug::Window();
 
         Inspector::Window(selectedEntity);
         Entity* returnEntity = Hierarchy::Window();
