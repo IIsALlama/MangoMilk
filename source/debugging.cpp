@@ -2,7 +2,7 @@
 
 namespace MangoMilk {
 	namespace Debug {
-		vector<LogMessage> debugLog;
+		std::vector<LogMessage> debugLog;
 
 		LogMessage::LogMessage(LogType _type, const std::string& _msg) {
 			type = _type;

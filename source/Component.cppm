@@ -9,10 +9,14 @@ namespace MangoMilk {
 	public:
 		virtual ~Component() = default;
 
-		void* entity;
+		void* ownerPtr;
 
 		const char* GetName() {
 			return typeid(*this).name();
+		}
+
+		template <typename T> T* CastOwnerPtr() {
+			return static_cast<T*>(ownerPtr);
 		}
 
 		void Update() {

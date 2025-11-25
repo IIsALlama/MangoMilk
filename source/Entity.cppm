@@ -26,7 +26,7 @@ namespace MangoMilk {
 		}
 
 		void AddComponent(Component* component) {
-			component->entity = this;
+			component->ownerPtr = this;
 			components.push_back(component);
 		}
 
@@ -47,15 +47,16 @@ namespace MangoMilk {
 			delete component;
 		}
 
-		template <typename T> Component* GetComponent() {
+		template <typename T> T* GetComponent() {
 			for (size_t i = 0; i < components.size(); i++)
 			{
-				if (std::is_same<decltype(*components[i]), T>::value) {
-					return components[i];
+				T* casted = dynamic_cast<T*>(components[i]);
+				if (casted) {
+					return casted;
 				}
 			}
 
-			return NULL;
+			return nullptr;
 		}
 
 		vector<Component*> GetAllComponents() {

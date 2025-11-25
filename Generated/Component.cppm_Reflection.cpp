@@ -18,7 +18,7 @@ add_type(Type{ .name="char", .id=get_id<char>(), .size=sizeof(char) });
 add_type(Type{ .name="void", .id=get_id<void>(), .size=0 });
 add_type(Type::create<MangoMilk::Component>("MangoMilk::Component", get_id<MangoMilk::Component>(),
 	{  },
-	{ Field::create<MangoMilk::Component, void*, &MangoMilk::Component::entity>("entity", Neat::Access::Public),  },
+	{ Field::create<MangoMilk::Component, void*, &MangoMilk::Component::ownerPtr>("ownerPtr", Neat::Access::Public),  },
 	{ Method::create<(char const * (MangoMilk::Component::*)() )&MangoMilk::Component::GetName, MangoMilk::Component, char const *>("GetName", Neat::Access::Public), Method::create<(void (MangoMilk::Component::*)() )&MangoMilk::Component::Update, MangoMilk::Component, void>("Update", Neat::Access::Public),  },
 	{  },
 	{  }

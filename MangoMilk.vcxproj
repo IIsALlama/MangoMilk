@@ -138,6 +138,7 @@ generate_reflection.bat</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp" />
     <ClCompile Include="include\imgui\imgui.cpp" />
     <ClCompile Include="include\imgui\imgui_demo.cpp" />
     <ClCompile Include="include\imgui\imgui_draw.cpp" />
@@ -150,9 +151,11 @@ generate_reflection.bat</Command>
     <ClCompile Include="source\Entity.cppm" />
     <ClCompile Include="source\game_manager.cpp" />
     <ClCompile Include="source\game_render.cpp" />
+    <ClCompile Include="source\inspector.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\MangoMilk.cppm" />
     <ClCompile Include="source\settings.cpp" />
+    <ClCompile Include="source\SpriteRenderer.cppm" />
     <ClCompile Include="source\time.cpp" />
     <ClCompile Include="source\Transform.cppm" />
     <ClCompile Include="Generated\Component.cppm_Reflection.cpp" />
@@ -169,12 +172,11 @@ generate_reflection.bat</Command>
     <ClInclude Include="include\imgui\imstb_rectpack.h" />
     <ClInclude Include="include\imgui\imstb_textedit.h" />
     <ClInclude Include="include\imgui\imstb_truetype.h" />
+    <ClInclude Include="source\common.h" />
     <ClInclude Include="source\debugging.h" />
-    <ClInclude Include="source\Game.h" />
     <ClInclude Include="source\game_manager.h" />
     <ClInclude Include="source\game_render.h" />
-    <ClInclude Include="source\main.h" />
-    <ClInclude Include="source\MangoMilk.h" />
+    <ClInclude Include="source\inspector.h" />
     <ClInclude Include="source\time.h" />
   </ItemGroup>
   <ItemGroup>

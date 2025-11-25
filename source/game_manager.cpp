@@ -2,14 +2,14 @@
 
 namespace MangoMilk {
 	namespace GameManager {
-		vector<Entity*> entities;
+		std::vector<Entity*> entities;
 
 		Entity* Instantiate(Entity* e) {
 			entities.push_back(e);
 			return e;
 		}
 
-		vector<Entity*> GetEntities() {
+		std::vector<Entity*> GetEntities() {
 			return entities;
 		}
 

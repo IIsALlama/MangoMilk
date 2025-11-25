@@ -1,8 +1,10 @@
 
 #include "game_render.h"
+#include "game_manager.h"
 
 import Entity;
 import Transform;
+import SpriteRenderer;
 
 using std::vector;
 
@@ -91,22 +93,26 @@ namespace MangoMilk {
             for (size_t i = 0; i < entities.size(); i++)
             {
                 Entity* entity = entities[i];
-                Vector2 pos = entity->transform->position;
-                Vector2 scale = entity->transform->scale;
+                SpriteRenderer* renderer = entity->GetComponent<SpriteRenderer>();
 
-                glm::mat4 projection = glm::ortho(0.0f, 800.0f, 600.0f, 0.0f, -1.0f, 1.0f);
+                if (renderer != nullptr) {
+                    Vector2 pos = entity->transform->position;
+                    Vector2 scale = entity->transform->scale;
 
-                glBegin(GL_TRIANGLES);
-                glVertex2f(pos.x-0.5f * scale.x, pos.y-0.5f * scale.y);
-                glVertex2f(pos.x-0.5f * scale.x, pos.y+0.5f * scale.y);
-                glVertex2f(pos.x+0.5f * scale.x, pos.y-0.5f * scale.y);
-                glEnd();
+                    glColor3f(renderer->colour.r, renderer->colour.g, renderer->colour.b);
 
-                glBegin(GL_TRIANGLES);
-                glVertex2f(pos.x - 0.5f * scale.x, pos.y + 0.5f * scale.y);
-                glVertex2f(pos.x + 0.5f * scale.x, pos.y + 0.5f * scale.y);
-                glVertex2f(pos.x + 0.5f * scale.x, pos.y - 0.5f * scale.y);
-                glEnd();
+                    glBegin(GL_TRIANGLES);
+                    glVertex2f(pos.x-0.5f * scale.x, pos.y-0.5f * scale.y);
+                    glVertex2f(pos.x-0.5f * scale.x, pos.y+0.5f * scale.y);
+                    glVertex2f(pos.x+0.5f * scale.x, pos.y-0.5f * scale.y);
+                    glEnd();
+
+                    glBegin(GL_TRIANGLES);
+                    glVertex2f(pos.x - 0.5f * scale.x, pos.y + 0.5f * scale.y);
+                    glVertex2f(pos.x + 0.5f * scale.x, pos.y + 0.5f * scale.y);
+                    glVertex2f(pos.x + 0.5f * scale.x, pos.y - 0.5f * scale.y);
+                    glEnd();
+                }
             }
 
             _UnbindFramebuffer();

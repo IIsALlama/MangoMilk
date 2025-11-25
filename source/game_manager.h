@@ -1,11 +1,9 @@
 #pragma once
 
+#include "common.h"
 #include "game_render.h"
-#include <vector>
-using std::vector;
 
 import Entity;
-
 
 namespace MangoMilk {
 	class Entity;
@@ -15,7 +13,7 @@ namespace MangoMilk {
 
 		Entity* Instantiate(Entity* e);
 
-		vector<Entity*> GetEntities();
+		std::vector<Entity*> GetEntities();
 
 		template <typename T> Entity* FindEntityOfType();
 		Entity* FindEntityWithName(const char* name);

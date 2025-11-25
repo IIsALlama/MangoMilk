@@ -13,14 +13,8 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="headers\include">
-      <UniqueIdentifier>{dc9654b2-aea3-4212-b004-6c27368c08e0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="source\Game">
       <UniqueIdentifier>{6f3a88cf-5d8b-427f-80dd-6b33346d54c7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="source\ECS">
-      <UniqueIdentifier>{eba34de2-333b-4131-902a-3f4aa5bd4b14}</UniqueIdentifier>
     </Filter>
     <Filter Include="source\Debug">
       <UniqueIdentifier>{370107d0-22df-4297-bd42-f4d2aa61daed}</UniqueIdentifier>
@@ -33,6 +27,12 @@
     </Filter>
     <Filter Include="source\Modules">
       <UniqueIdentifier>{93f76cac-2ba4-475f-96b1-53d1e8b33f73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Windows">
+      <UniqueIdentifier>{62a3952d-1602-47a7-9ef8-5a812958dba0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\Other">
+      <UniqueIdentifier>{938bd8e2-4229-4293-a6c1-dba51e97092f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -60,12 +60,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="source\settings.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="source\time.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="source\debugging.cpp">
       <Filter>source\Debug</Filter>
     </ClCompile>
@@ -90,7 +84,19 @@
     <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="Generated\Component.ixx_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Entity.cppm_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
     <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
@@ -102,19 +108,7 @@
     <ClCompile Include="Generated\*.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="Generated\*.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\Component.ixx_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
@@ -159,6 +153,30 @@
     <ClCompile Include="source\Entity.cppm">
       <Filter>source\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="source\SpriteRenderer.cppm">
+      <Filter>source\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Component.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="source\inspector.cpp">
+      <Filter>source\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="source\settings.cpp">
+      <Filter>source\Other</Filter>
+    </ClCompile>
+    <ClCompile Include="source\time.cpp">
+      <Filter>source\Other</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\imgui\imgui.h">
@@ -197,17 +215,14 @@
     <ClInclude Include="source\game_render.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="source\main.h">
-      <Filter>headers</Filter>
-    </ClInclude>
     <ClInclude Include="source\time.h">
       <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="source\Game.h">
-      <Filter>headers\include</Filter>
+    <ClInclude Include="source\inspector.h">
+      <Filter>headers</Filter>
     </ClInclude>
-    <ClInclude Include="source\MangoMilk.h">
-      <Filter>headers\include</Filter>
+    <ClInclude Include="source\common.h">
+      <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

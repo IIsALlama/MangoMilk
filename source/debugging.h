@@ -1,8 +1,5 @@
 #pragma once
-
-#include <iostream>
-#include <vector>
-using std::vector;
+#include "common.h"
 
 namespace MangoMilk {
 	namespace Debug {
@@ -29,5 +26,4 @@ namespace MangoMilk {
 		int GetLogSize();
 		LogMessage* GetLog(int i);
 	}
-
 }

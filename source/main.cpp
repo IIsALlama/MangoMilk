@@ -1,18 +1,39 @@
+#include <fstream>
+#include <thread>
+#include <cassert>
 
-#include "main.h"
+#include <imgui.h>
+#include <imgui_internal.h>
+#include <imgui_impl_glfw.h>
+#include <imgui_impl_opengl3.h>
+
+#include "common.h"
+#include "debugging.h"
+#include "game_manager.h"
+#include "game_render.h"
+#include "inspector.h"
+
+using namespace MangoMilk;
+using namespace Neat;
+using namespace std;
 
 import MangoMilk;
 
 import Transform;
 import Component;
 import Entity;
+import SpriteRenderer;
 
 const ImVec4 COLOUR_ERROR = ImVec4(1.0f, 0.0f, 0.0f, 1.0f);
 const ImVec4 COLOUR_WARNING = ImVec4(1.0f, 1.0f, 0.8f, 1.0f);
 const ImVec4 COLOUR_MESSAGE = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
 
+Colour colour_blue = Colour(0.0f, 0.0f, 1.0f);
+Colour colour_red = Colour(1.0f, 0.0f, 0.0f);
+Colour colour_green = Colour(0.0f, 1.0f, 0.0f);
+
 GLFWwindow* window;
-Entity* selectedEntity = NULL;
+Entity* selectedEntity = nullptr;
 
 bool FileExists(const std::string& filename) {
     std::ifstream file(filename);
@@ -84,80 +105,6 @@ void window_assets()
     ImGui::End();
 }
 
-void window_inspector()
-{
-    ImGui::Begin("Inspector");
-
-    if (selectedEntity != NULL) {
-        ImGui::Text(selectedEntity->name);
-
-        vector<Component*> components = selectedEntity->GetAllComponents();
-        for (size_t i = 0; i < components.size(); i++)
-        {
-            std::string fullComponentName = components[i]->GetName();
-
-            unsigned first = fullComponentName.find(" ");
-            unsigned last = fullComponentName.find("[");
-            std::string componentName = fullComponentName.substr(first+1, last - first - 1);
-
-            ImGui::BeginChild(componentName.c_str());
-            ImGui::Text(componentName.c_str());
-
-            const Type* type = Neat::get_type(componentName);
-
-            AnyPtr testPtr{ components[i], type->id};
-
-            Any value = type->fields[0].get_value(testPtr);
-
-            int id = 0;
-            for (size_t i = 0; i < type->fields.size(); i++)
-            {
-                Any value = type->fields[i].get_value(testPtr);
-
-                const char* label = type->fields[i].name.c_str();
-
-                ImGui::Text(label);
-
-                if (value.type_id() == get_id<int>()) {
-                    int* intValue = value.value_ptr<int>();
-                    ImGui::Text(to_string(*intValue).c_str());
-                    ImGui::InputInt(label, intValue);
-                }
-                else if (value.type_id() == get_id<Vector2>()) {
-                    Vector2* vec2Value = value.value_ptr<Vector2>();
-                    ImGui::PushID(id);
-                    id++;
-                    if (ImGui::InputFloat("X", &vec2Value->x)) {
-                        type->fields[i].set_value(testPtr, value);
-                    }
-                    ImGui::PopID();
-
-                    ImGui::PushID(id);
-                    id++;
-                    if (ImGui::InputFloat("Y", &vec2Value->y)) {
-                        type->fields[i].set_value(testPtr, value);
-                    }
-                    ImGui::PopID();
-                }
-                else if (value.type_id() == get_id<float>()) {
-                    float* floatValue = value.value_ptr<float>();
-
-                    ImGui::PushID(id);
-                    id++;
-                    if (ImGui::InputFloat(label, floatValue)) {
-                        type->fields[i].set_value(testPtr, value);
-                    }
-                    ImGui::PopID();
-                }
-            }
-
-            ImGui::EndChild();
-        }
-    }
-
-    ImGui::End();
-}
-
 void window_hierarchy()
 {
     ImGui::Begin("Hierarchy");
@@ -184,6 +131,7 @@ void window_hierarchy()
     {
         ImGui::Text("Create New:");
         if (ImGui::MenuItem("Entity")) { GameManager::Instantiate(new Entity("New Entity")); };
+        if (ImGui::MenuItem("Sprite")) { Entity* e = GameManager::Instantiate(new Entity("New Sprite")); e->AddComponent(new SpriteRenderer()); };
         ImGui::EndPopup();
     }
 
@@ -297,6 +245,25 @@ void window_menubar() {
     }
 }
 
+Entity* GetEntity(MangoMilk::Component* component) {
+    return component->CastOwnerPtr<Entity>();
+}
+
+const Type* GetComponentType(MangoMilk::Component* component) {
+    //Get name of component
+    std::string fullComponentName = component->GetName();
+    unsigned first = fullComponentName.find(" ");
+    unsigned last = fullComponentName.find("[");
+    std::string componentName = fullComponentName.substr(first + 1, last - first - 1);
+
+    //Get reflection data
+    const Type* type = Neat::get_type(componentName);
+
+    //AnyPtr typePtr{ component, type->id };
+
+    return type;
+}
+
 int main()
 {
     //Initialize
@@ -309,40 +276,13 @@ int main()
     Debug::LogError("Test Error");
 
     Entity* e1 = GameManager::Instantiate(new Entity("Big Square"));
+    SpriteRenderer* sp = new SpriteRenderer();
+    sp->colour = colour_blue;
+    e1->AddComponent(sp);
     Entity* e2 = GameManager::Instantiate(new Entity("Small Square"));
+    e2->AddComponent(new SpriteRenderer());
     e2->transform->scale = Vector2(0.2f, 0.2f);
     e2->transform->position = Vector2(0.7f, 0.5f);
-
-    Test* test = new Test(10, 5.0f);
-
-    const Type* type = Neat::get_type<MangoMilk::Test>();
-    AnyPtr testPtr{ test, type->id };
-
-    Any value = type->fields[0].get_value(testPtr);
-
-    Debug::Log(type->name.c_str());
-
-    for (size_t i = 0; i < type->fields.size(); i++)
-    {
-        Any value = type->fields[i].get_value(testPtr);
-
-        Debug::Log(type->fields[i].name.c_str());
-
-        if (value.type_id() == get_id<int>()) {
-            int* intValue = value.value_ptr<int>();
-            Debug::Log(to_string(*intValue).c_str());
-        }
-        else if (value.type_id() == get_id<float>()) {
-            float* floatValue = value.value_ptr<float>();
-            Debug::Log(to_string(*floatValue).c_str());
-        }
-        else if (value.type_id() == get_id<string>()) {
-            Debug::Log(value.value<string>());
-        }
-        else {
-            Debug::Log("Unsupported field type.");
-        }
-    }
 
     // Render Loop
     while (!glfwWindowShouldClose(window))
@@ -366,7 +306,8 @@ int main()
         window_scene_view();
 
         window_assets();
-        window_inspector();
+        //window_inspector();
+        Inspector::Window(selectedEntity);
         window_hierarchy();
         window_console();
         
