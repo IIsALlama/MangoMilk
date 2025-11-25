@@ -12,6 +12,7 @@
 #include "game_manager.h"
 #include "game_render.h"
 #include "inspector.h"
+#include "hierarchy.h"
 
 using namespace MangoMilk;
 using namespace Neat;
@@ -101,42 +102,6 @@ void window_viewport()
 void window_assets() 
 {
     ImGui::Begin("Assets");
-
-    ImGui::End();
-}
-
-void window_hierarchy()
-{
-    ImGui::Begin("Hierarchy");
-
-    ImGui::BeginChild("Scrolling");
-    
-    vector<Entity*> entities = GameManager::GetEntities();
-    int id = 0;
-    for (size_t i = 0; i < entities.size(); i++)
-    {
-        Entity* entity = entities[i];
-
-        ImGui::PushID(id);
-
-        if (ImGui::Button(entity->name, ImVec2(200, 20))) {
-            selectedEntity = entity;
-        }
-
-        ImGui::PopID();
-        id++;
-    }
-
-    if (ImGui::BeginPopupContextWindow())
-    {
-        ImGui::Text("Create New:");
-        if (ImGui::MenuItem("Entity")) { GameManager::Instantiate(new Entity("New Entity")); };
-        if (ImGui::MenuItem("Sprite")) { Entity* e = GameManager::Instantiate(new Entity("New Sprite")); e->AddComponent(new SpriteRenderer()); };
-        ImGui::EndPopup();
-    }
-
-    ImGui::EndChild();
-
 
     ImGui::End();
 }
@@ -306,10 +271,11 @@ int main()
         window_scene_view();
 
         window_assets();
-        //window_inspector();
-        Inspector::Window(selectedEntity);
-        window_hierarchy();
         window_console();
+
+        Inspector::Window(selectedEntity);
+        Entity* returnEntity = Hierarchy::Window();
+        if (returnEntity != nullptr) selectedEntity = returnEntity;
         
         // Render
         ImGui::Render();

@@ -78,7 +78,13 @@
     <ClCompile Include="source\Transform.cppm">
       <Filter>source\Modules</Filter>
     </ClCompile>
+    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
     <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
@@ -96,13 +102,13 @@
     <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
     <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\*.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Generated\*.cpp">
@@ -177,6 +183,9 @@
     <ClCompile Include="source\time.cpp">
       <Filter>source\Other</Filter>
     </ClCompile>
+    <ClCompile Include="source\hierarchy.cpp">
+      <Filter>source\Windows</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\imgui\imgui.h">
@@ -222,6 +231,9 @@
       <Filter>headers</Filter>
     </ClInclude>
     <ClInclude Include="source\common.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="source\hierarchy.h">
       <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>

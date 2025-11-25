@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v145</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -151,6 +151,7 @@ generate_reflection.bat</Command>
     <ClCompile Include="source\Entity.cppm" />
     <ClCompile Include="source\game_manager.cpp" />
     <ClCompile Include="source\game_render.cpp" />
+    <ClCompile Include="source\hierarchy.cpp" />
     <ClCompile Include="source\inspector.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\MangoMilk.cppm" />
@@ -176,6 +177,7 @@ generate_reflection.bat</Command>
     <ClInclude Include="source\debugging.h" />
     <ClInclude Include="source\game_manager.h" />
     <ClInclude Include="source\game_render.h" />
+    <ClInclude Include="source\hierarchy.h" />
     <ClInclude Include="source\inspector.h" />
     <ClInclude Include="source\time.h" />
   </ItemGroup>

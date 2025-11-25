@@ -1,5 +1,9 @@
 #include "game_manager.h"
 
+#include "game_render.h"
+
+import Entity;
+
 namespace MangoMilk {
 	namespace GameManager {
 		std::vector<Entity*> entities;

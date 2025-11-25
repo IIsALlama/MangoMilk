@@ -1,9 +1,6 @@
 #pragma once
 
 #include "common.h"
-#include "game_render.h"
-
-import Entity;
 
 namespace MangoMilk {
 	class Entity;
