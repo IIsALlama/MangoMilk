@@ -2,6 +2,7 @@
 #include "hierarchy.h"
 
 #include "game_manager.h"
+#include "debugging.h"
 
 #include <imgui.h>
 #include <imgui_internal.h>
@@ -17,10 +18,66 @@ using namespace Neat;
 namespace MangoMilk {
     namespace Hierarchy {
         int id = 0;
+        std::vector<Entity*> shownChildren;
+        
+        Entity* ShowEntitysRecursive(Entity* e) {
+            Entity* selectedEntity = nullptr;
+
+            ImGui::PushID(id++);
+            if (ImGui::Button(e->name, ImVec2(200, 20))) {
+                selectedEntity = e;
+            }
+            ImGui::PopID();
+
+            if (ImGui::BeginDragDropSource()) {
+                ImGui::SetDragDropPayload("EntityDragDrop", &e, sizeof(Entity*));
+                ImGui::Text(e->name);
+                ImGui::EndDragDropSource();
+            }
+
+            if (ImGui::BeginDragDropTarget()) {
+                if (const ImGuiPayload* dragDropData = ImGui::AcceptDragDropPayload("EntityDragDrop")) {
+                    Entity* draggedEntity = *static_cast<Entity* const*>(dragDropData->Data);
+                    e->AddChild(draggedEntity);
+                }
+                ImGui::EndDragDropTarget();
+            }
+            
+            ImGui::Indent();
+            std::vector<Entity*> children = e->GetChildren();
+            for (size_t i = 0; i < children.size(); i++)
+            {
+                selectedEntity = ShowEntitysRecursive(children[i]);
+                shownChildren.push_back(children[i]);
+            }
+            ImGui::Unindent();
+
+            return selectedEntity;
+        }
+
+        void DropTarget() {
+            //DRAG DROP TARGET
+            ImGui::PushID(id++);
+            float spacing = ImGui::GetStyle().ItemSpacing.y;
+            ImGui::SetCursorPosY(ImGui::GetCursorPosY() - spacing + 2);
+            ImGui::InvisibleButton("DropTarget", ImVec2(-1, 5));
+            ImGui::PopID();
+
+            if (ImGui::BeginDragDropTarget()) {
+                if (const ImGuiPayload* dragDropData = ImGui::AcceptDragDropPayload("EntityDragDrop")) {
+                    Entity* draggedEntity = *static_cast<Entity* const*>(dragDropData->Data);
+                    if (draggedEntity->parent != nullptr) {
+                        draggedEntity->parent->RemoveChild(draggedEntity);
+                    }
+                }
+                ImGui::EndDragDropTarget();
+            }
+        }
 
         Entity* Window()
         {
             id = 0;
+            shownChildren.clear();
             Entity* selectedEntity = nullptr;
 
             ImGui::Begin("Hierarchy"); //IMGUI WINDOW
@@ -33,12 +90,16 @@ namespace MangoMilk {
             {
                 Entity* entity = entities[i];
 
-                ImGui::PushID(id++);
-                if (ImGui::Button(entity->name, ImVec2(200, 20))) {
-                    selectedEntity = entity;
+                if (std::find(shownChildren.begin(), shownChildren.end(), entity) != shownChildren.end()) {
+                    continue;
                 }
-                ImGui::PopID();
+
+                DropTarget();
+
+                ShowEntitysRecursive(entities[i]);
             }
+            DropTarget();
+            GameManager::SetEntities(entities);
 
             //Content Menu
             if (ImGui::BeginPopupContextWindow())

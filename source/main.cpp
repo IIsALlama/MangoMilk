@@ -203,6 +203,8 @@ int main()
     e2->transform->scale = Vector2(0.2f, 0.2f);
     e2->transform->position = Vector2(0.7f, 0.5f);
 
+    e1->AddChild(e2);
+
     // Render Loop
     while (!glfwWindowShouldClose(window))
     {

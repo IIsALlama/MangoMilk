@@ -17,6 +17,10 @@ namespace MangoMilk {
 			return entities;
 		}
 
+		void SetEntities(std::vector<Entity*> es) {
+			entities = es;
+		}
+
 		void GameLoop() {
 			GameRender::Render();
 		}

@@ -155,6 +155,7 @@ generate_reflection.bat</Command>
     <ClCompile Include="source\inspector.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\MangoMilk.cppm" />
+    <ClCompile Include="source\scene.cpp" />
     <ClCompile Include="source\settings.cpp" />
     <ClCompile Include="source\SpriteRenderer.cppm" />
     <ClCompile Include="source\time.cpp" />
