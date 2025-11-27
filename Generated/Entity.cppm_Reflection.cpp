@@ -17,17 +17,17 @@ namespace Neat
 add_type(Type{ .name="double", .id=get_id<double>(), .size=sizeof(double) });
 add_type(Type{ .name="void", .id=get_id<void>(), .size=0 });
 add_type(Type{ .name="char", .id=get_id<char>(), .size=sizeof(char) });
-add_type(Type::create<MangoMilk::Entity>("MangoMilk::Entity", get_id<MangoMilk::Entity>(),
-	{  },
-	{ Field::create<MangoMilk::Entity, char const *, &MangoMilk::Entity::name>("name", Neat::Access::Public), Field::create<MangoMilk::Entity, MangoMilk::Entity*, &MangoMilk::Entity::parent>("parent", Neat::Access::Public), Field::create<MangoMilk::Entity, MangoMilk::Transform*, &MangoMilk::Entity::transform>("transform", Neat::Access::Public),  },
-	{ Method::create<(void (MangoMilk::Entity::*)(MangoMilk::Entity*) )&MangoMilk::Entity::AddChild, MangoMilk::Entity, void, MangoMilk::Entity*>("AddChild", Neat::Access::Public), Method::create<(void (MangoMilk::Entity::*)(MangoMilk::Entity*) )&MangoMilk::Entity::RemoveChild, MangoMilk::Entity, void, MangoMilk::Entity*>("RemoveChild", Neat::Access::Public), Method::create<(void (MangoMilk::Entity::*)(MangoMilk::Component*) )&MangoMilk::Entity::AddComponent, MangoMilk::Entity, void, MangoMilk::Component*>("AddComponent", Neat::Access::Public), Method::create<(void (MangoMilk::Entity::*)(MangoMilk::Component*) )&MangoMilk::Entity::RemoveComponent, MangoMilk::Entity, void, MangoMilk::Component*>("RemoveComponent", Neat::Access::Public), Method::create<(void (MangoMilk::Entity::*)() )&MangoMilk::Entity::UpdateComponents, MangoMilk::Entity, void>("UpdateComponents", Neat::Access::Public),  },
-	{  },
-	{  }
-));
 add_type(Type::create<__m128d>("__m128d", get_id<__m128d>(),
 	{  },
 	{ Field::create<__m128d, <UNSUPPORTED_TYPE Array>, &__m128d::m128d_f64>("m128d_f64", Neat::Access::Public),  },
 	{  },
+	{  },
+	{  }
+));
+add_type(Type::create<MangoMilk::Entity>("MangoMilk::Entity", get_id<MangoMilk::Entity>(),
+	{  },
+	{ Field::create<MangoMilk::Entity, char const *, &MangoMilk::Entity::name>("name", Neat::Access::Public), Field::create<MangoMilk::Entity, MangoMilk::Transform*, &MangoMilk::Entity::transform>("transform", Neat::Access::Public),  },
+	{ Method::create<(void (MangoMilk::Entity::*)(MangoMilk::Component*) )&MangoMilk::Entity::AddComponent, MangoMilk::Entity, void, MangoMilk::Component*>("AddComponent", Neat::Access::Public), Method::create<(void (MangoMilk::Entity::*)(MangoMilk::Component*) )&MangoMilk::Entity::RemoveComponent, MangoMilk::Entity, void, MangoMilk::Component*>("RemoveComponent", Neat::Access::Public), Method::create<(void (MangoMilk::Entity::*)() )&MangoMilk::Entity::UpdateComponents, MangoMilk::Entity, void>("UpdateComponents", Neat::Access::Public),  },
 	{  },
 	{  }
 ));

@@ -105,7 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\GLFW\include;$(ProjectDir)include\GLEW\include;$(ProjectDir)include\GLM;$(ProjectDir)include\imgui;$(ProjectDir)include\imgui\backends;$(ProjectDir)include\Generated;$(ProjectDir)include\NeatReflection\include;$(ProjectDir)include\NeatReflection\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\GLFW\include;$(ProjectDir)include\GLEW\include;$(ProjectDir)include\GLM;$(ProjectDir)include\imgui;$(ProjectDir)include\imgui\backends;$(ProjectDir)include\Generated;$(ProjectDir)include\NeatReflection\include;$(ProjectDir)include\NeatReflection\src;$(ProjectDir)include\reflect-cpp\src;$(ProjectDir)include\reflect-cpp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -138,6 +138,9 @@ generate_reflection.bat</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Generated\Component.cppm_Reflection.cpp" />
+    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp" />
+    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp" />
     <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp" />
     <ClCompile Include="include\imgui\imgui.cpp" />
     <ClCompile Include="include\imgui\imgui_demo.cpp" />
@@ -155,14 +158,11 @@ generate_reflection.bat</Command>
     <ClCompile Include="source\inspector.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\MangoMilk.cppm" />
+    <ClCompile Include="source\Transform.cppm" />
     <ClCompile Include="source\scene.cpp" />
     <ClCompile Include="source\settings.cpp" />
     <ClCompile Include="source\SpriteRenderer.cppm" />
     <ClCompile Include="source\time.cpp" />
-    <ClCompile Include="source\Transform.cppm" />
-    <ClCompile Include="Generated\Component.cppm_Reflection.cpp" />
-    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp" />
-    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\imgui\imconfig.h" />

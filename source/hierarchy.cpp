@@ -38,17 +38,18 @@ namespace MangoMilk {
             if (ImGui::BeginDragDropTarget()) {
                 if (const ImGuiPayload* dragDropData = ImGui::AcceptDragDropPayload("EntityDragDrop")) {
                     Entity* draggedEntity = *static_cast<Entity* const*>(dragDropData->Data);
-                    e->AddChild(draggedEntity);
+                    e->transform->AddChild(draggedEntity->transform);
                 }
                 ImGui::EndDragDropTarget();
             }
             
             ImGui::Indent();
-            std::vector<Entity*> children = e->GetChildren();
-            for (size_t i = 0; i < children.size(); i++)
+            auto children = e->transform->GetChildren();
+            for (int i = 0; i < children.size; i++)
             {
-                selectedEntity = ShowEntitysRecursive(children[i]);
-                shownChildren.push_back(children[i]);
+                Entity* selected = ShowEntitysRecursive(children[i]->CastOwnerPtr<Entity>());
+                if (selected != nullptr) selectedEntity = selected;
+                shownChildren.push_back(children[i]->CastOwnerPtr<Entity>());
             }
             ImGui::Unindent();
 
@@ -66,8 +67,8 @@ namespace MangoMilk {
             if (ImGui::BeginDragDropTarget()) {
                 if (const ImGuiPayload* dragDropData = ImGui::AcceptDragDropPayload("EntityDragDrop")) {
                     Entity* draggedEntity = *static_cast<Entity* const*>(dragDropData->Data);
-                    if (draggedEntity->parent != nullptr) {
-                        draggedEntity->parent->RemoveChild(draggedEntity);
+                    if (draggedEntity->transform->GetParent() != nullptr) {
+                        draggedEntity->transform->GetParent()->RemoveChild(draggedEntity->transform);
                     }
                 }
                 ImGui::EndDragDropTarget();
@@ -96,7 +97,8 @@ namespace MangoMilk {
 
                 DropTarget();
 
-                ShowEntitysRecursive(entities[i]);
+                Entity* selected = ShowEntitysRecursive(entities[i]);
+                if (selected != nullptr) selectedEntity = selected;
             }
             DropTarget();
             GameManager::SetEntities(entities);

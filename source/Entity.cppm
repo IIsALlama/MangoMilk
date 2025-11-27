@@ -12,11 +12,9 @@ namespace MangoMilk {
 	{
 	private:
 		vector<Component*> components;
-		vector<Entity*> children;
 
 	public:
 		const char* name;
-		Entity* parent = nullptr;
 		Transform* transform;
 
 		Entity(const char* _name) {
@@ -25,25 +23,6 @@ namespace MangoMilk {
 			transform = t;
 
 			name = _name;
-		}
-
-		void AddChild(Entity* e) {
-			children.push_back(e);
-			if (e->parent != nullptr) e->parent->RemoveChild(e);
-			e->parent = this;
-		}
-
-		void RemoveChild(Entity* e) {
-			auto index = std::find(children.begin(), children.end(), e);
-
-			if (index != children.end()) {
-				children.erase(index);
-				e->parent = nullptr;
-			}
-		}
-
-		vector<Entity*> GetChildren() {
-			return children;
 		}
 
 		void AddComponent(Component* c) {

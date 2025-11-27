@@ -96,7 +96,7 @@ namespace MangoMilk {
                 SpriteRenderer* renderer = entity->GetComponent<SpriteRenderer>();
 
                 if (renderer != nullptr) {
-                    Vector2 pos = entity->transform->position;
+                    Vector2 pos = entity->transform->GetWorldPosition();
                     Vector2 scale = entity->transform->scale;
 
                     glColor3f(renderer->colour.r, renderer->colour.g, renderer->colour.b);

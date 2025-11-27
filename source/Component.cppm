@@ -2,7 +2,8 @@ export module Component;
 #include <typeinfo>
 
 namespace MangoMilk {
-	export struct Component 
+	
+	export struct Component
 	{
 	private:
 

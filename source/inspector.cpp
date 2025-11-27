@@ -5,6 +5,10 @@
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
 
+#include <rfl.hpp>
+
+#include "debugging.h"
+
 import Component;
 import Transform;
 import SpriteRenderer;
@@ -95,9 +99,22 @@ namespace MangoMilk {
 
             ImGui::Text(componentName.c_str()); //IMGUI TEXT Component name
 
+            /*if (fullComponentName != "class MangoMilk::SpriteRenderer") {
+                ImGui::EndGroup();
+                return;
+            }*/
+
             //Get reflection data
             const Type* type = Neat::get_type(componentName);
             AnyPtr typePtr{ component, type->id };
+
+            //SpriteRenderer* sp = rfl::as<SpriteRenderer*>(component);
+            //const auto view = rfl::to_view(sp);
+
+            //view.apply([](const auto& f) {
+            //// f is an rfl::Field pointing to the original field.
+            //    std::cout << f.name() << f.value() << std::endl;
+            //});
 
             //Show Fields
             for (size_t i = 0; i < type->fields.size(); i++)
