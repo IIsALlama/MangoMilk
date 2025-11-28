@@ -183,6 +183,24 @@ Entity* GetEntity(MangoMilk::Component* component) {
     return component->CastOwnerPtr<Entity>();
 }
 
+std::vector<const Type*> GetComponentTypes() {
+    const Type* componentType = Neat::get_type<Component>();
+    std::vector<const Type*> componentTypes;
+    auto reflectedTypes = Neat::get_types();
+    for (size_t i = 0; i < reflectedTypes.size(); i++)
+    {
+        std::vector<BaseClass> bases = reflectedTypes[i].bases;
+        for (size_t n = 0; n < bases.size(); n++)
+        {
+            if (bases[n].base_id == componentType->id) {
+                Debug::Log(reflectedTypes[i].name);
+                componentTypes.push_back(&reflectedTypes[i]);
+            }
+        }
+    }
+    return componentTypes;
+}
+
 int main()
 {
     //Initialize
@@ -205,6 +223,7 @@ int main()
 
     e1->transform->AddChild(e2->transform);
 
+    GetComponentTypes();
     // Render Loop
     while (!glfwWindowShouldClose(window))
     {

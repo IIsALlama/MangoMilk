@@ -19,6 +19,8 @@ using namespace Neat;
 
 namespace MangoMilk {
     namespace Inspector {
+
+        static char textInputBuffer[64] = "";
         int id = 0;
 
         void ShowField(const Field* field, AnyPtr typePtr) {
@@ -32,7 +34,7 @@ namespace MangoMilk {
                 int* intValue = value.value_ptr<int>();
 
                 ImGui::PushID(id++);
-                if (ImGui::InputInt(label, intValue)) {
+                if (ImGui::InputInt("", intValue)) {
                     field->set_value(typePtr, value);
                 }
                 ImGui::PopID();
@@ -41,7 +43,7 @@ namespace MangoMilk {
                 float* floatValue = value.value_ptr<float>();
 
                 ImGui::PushID(id++);
-                if (ImGui::InputFloat(label, floatValue)) {
+                if (ImGui::InputFloat("", floatValue)) {
                     field->set_value(typePtr, value);
                 }
                 ImGui::PopID();
@@ -99,22 +101,9 @@ namespace MangoMilk {
 
             ImGui::Text(componentName.c_str()); //IMGUI TEXT Component name
 
-            /*if (fullComponentName != "class MangoMilk::SpriteRenderer") {
-                ImGui::EndGroup();
-                return;
-            }*/
-
             //Get reflection data
             const Type* type = Neat::get_type(componentName);
             AnyPtr typePtr{ component, type->id };
-
-            //SpriteRenderer* sp = rfl::as<SpriteRenderer*>(component);
-            //const auto view = rfl::to_view(sp);
-
-            //view.apply([](const auto& f) {
-            //// f is an rfl::Field pointing to the original field.
-            //    std::cout << f.name() << f.value() << std::endl;
-            //});
 
             //Show Fields
             for (size_t i = 0; i < type->fields.size(); i++)
@@ -133,7 +122,11 @@ namespace MangoMilk {
             id = 0;
 
             if (selectedEntity != nullptr) {
-                ImGui::Text(selectedEntity->name); //IMGUI TEXT Entity name
+                //IMGUI TEXT INPUT Entity name
+                strcpy_s(textInputBuffer, sizeof(textInputBuffer), selectedEntity->name.c_str());
+                if (ImGui::InputText("Name", textInputBuffer, sizeof(textInputBuffer))) {
+                    selectedEntity->name = textInputBuffer;
+                }
 
                 ImGui::Dummy(ImVec2(0.0f, 10.0f)); //IMGUI SPACING
 
@@ -142,6 +135,13 @@ namespace MangoMilk {
                 for (size_t i = 0; i < components.size(); i++)
                 {
                     ShowComponent(components[i]);
+                }
+
+                if (ImGui::BeginPopupContextWindow("AddComponent", ImGuiButtonFlags_MouseButtonLeft))
+                {
+                    ImGui::Text("Add Component:");
+                    if (ImGui::MenuItem("SpriteRenderer")) { selectedEntity->AddComponent(new SpriteRenderer()); };
+                    ImGui::EndPopup();
                 }
             }
 

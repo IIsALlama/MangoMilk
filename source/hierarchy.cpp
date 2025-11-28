@@ -24,14 +24,14 @@ namespace MangoMilk {
             Entity* selectedEntity = nullptr;
 
             ImGui::PushID(id++);
-            if (ImGui::Button(e->name, ImVec2(200, 20))) {
+            if (ImGui::Button(e->name.c_str(), ImVec2(200, 20))) {
                 selectedEntity = e;
             }
             ImGui::PopID();
 
             if (ImGui::BeginDragDropSource()) {
                 ImGui::SetDragDropPayload("EntityDragDrop", &e, sizeof(Entity*));
-                ImGui::Text(e->name);
+                ImGui::Text(e->name.c_str());
                 ImGui::EndDragDropSource();
             }
 

@@ -3,6 +3,8 @@ export module Entity;
 #include <vector>
 using std::vector;
 
+#include <iostream>
+
 import Component;
 import Transform;
 
@@ -14,10 +16,10 @@ namespace MangoMilk {
 		vector<Component*> components;
 
 	public:
-		const char* name;
+		std::string name;
 		Transform* transform;
 
-		Entity(const char* _name) {
+		Entity(std::string _name) {
 			Transform* t = new Transform();
 			AddComponent(t);
 			transform = t;
