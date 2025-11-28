@@ -1,5 +1,7 @@
 export module Transform;
 
+#include <cassert>
+
 import Component;
 
 namespace MangoMilk {
@@ -7,7 +9,7 @@ namespace MangoMilk {
 	struct LinkedListNode
 	{
 		T data = nullptr;
-		struct LinkedListNode* next = nullptr;
+		struct LinkedListNode<T>* next = nullptr;
 
 		LinkedListNode(T _data) : data(_data) {};
 	};
@@ -15,19 +17,17 @@ namespace MangoMilk {
 	export template <typename T>
 	class LinkedList
 	{
-		LinkedListNode<T>* start = nullptr;
-		LinkedListNode<T>* end = nullptr;
+		LinkedListNode<T>* head = nullptr;
 
 	public:
 		int size = 0;
 
 		T operator [](int i) {
-			LinkedListNode<T>* current = start;
+			LinkedListNode<T>* current = head;
+			assert(current != nullptr);
 			for (size_t n = 0; n < i; n++)
 			{
-				if (current == nullptr || current->next == nullptr) {
-					//std::cout << "index out of range of linked list.";
-				}
+				assert(current->next != nullptr);
 				current = current->next;
 			}
 			return current->data;
@@ -35,42 +35,60 @@ namespace MangoMilk {
 
 		void push_back(T item) {
 			LinkedListNode<T>* newNode = new LinkedListNode<T>(item);
-			if (start == nullptr) { start = newNode; end = newNode; }
-
-			end->next = newNode;
-			end = end->next;
 			size++;
+
+			if (head == nullptr) {
+				head = newNode;
+			}
+			else {
+				newNode->next = head;
+				head = newNode;
+			}
 		}
 
 		void push_front(T item) {
-			LinkedListNode<T>* newNode = new LinkedListNode<T>(item);
-			if (start == nullptr) { start = newNode; end = newNode; }
+			assert(true);
+		}
 
-			LinkedListNode<T>* temp = start;
-			start = newNode;
-			newNode->next = temp;
-			size++;
+		bool contains(T item) {
+			LinkedListNode<T>* current = head;
+
+			for (size_t n = 0; n < size; n++)
+			{
+				if (current->data == item) {
+					return true;
+				}
+				current = current->next;
+			}
+
+			return false;
 		}
 
 		void erase(int i) {
 			LinkedListNode<T>* last = nullptr;
-			LinkedListNode<T>* current = start;
+			LinkedListNode<T>* current = head;
+			assert(current != nullptr);
+
 			for (size_t n = 0; n < i; n++)
 			{
-				if (current->next = nullptr) {
-					//std::cout << "index out of range of linked list.";
-					return;
-				}
+				assert(current->next != nullptr);
+
 				last = current;
 				current = current->next;
 			}
-			last->next = current->next;
+
+			if (last != nullptr) {
+				last->next = current->next;
+			}
+			else {
+				head = current->next;
+			}
 			delete current;
 			size--;
 		}
 
 		int index_of(T item) {
-			LinkedListNode<T>* current = start;
+			LinkedListNode<T>* current = head;
 			for (size_t n = 0; n < size; n++)
 			{
 				if (current->data == item) {
@@ -127,6 +145,7 @@ namespace MangoMilk {
 		}
 
 		void AddChild(Transform* e) {
+			if (children.contains(e)) return;
 			children.push_back(e);
 			if (e->parent != nullptr) e->parent->RemoveChild(e);
 			e->parent = this;
@@ -143,6 +162,10 @@ namespace MangoMilk {
 
 		LinkedList<Transform*> GetChildren() {
 			return children;
+		}
+
+		int GetChildAmount() {
+			return children.size;
 		}
 
 		void Update() {

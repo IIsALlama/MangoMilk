@@ -44,8 +44,8 @@ namespace MangoMilk {
             }
             
             ImGui::Indent();
-            auto children = e->transform->GetChildren();
-            for (int i = 0; i < children.size; i++)
+            LinkedList<Transform*> children = e->transform->GetChildren();
+            for (int i = 0; i < e->transform->GetChildAmount(); i++)
             {
                 Entity* selected = ShowEntitysRecursive(children[i]->CastOwnerPtr<Entity>());
                 if (selected != nullptr) selectedEntity = selected;
