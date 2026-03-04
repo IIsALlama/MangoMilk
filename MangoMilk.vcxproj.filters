@@ -34,6 +34,9 @@
     <Filter Include="source\Other">
       <UniqueIdentifier>{938bd8e2-4229-4293-a6c1-dba51e97092f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{57a45477-8ada-4b8c-8b3a-2d4328978d1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="include\imgui\imgui.cpp">
@@ -81,39 +84,6 @@
     <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\Entity.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\NewModule.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\Component.ixx_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
@@ -126,10 +96,13 @@
     <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="Generated\*.cpp">
+    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="Generated\Component.ixx_Reflection.cpp">
+    <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
@@ -189,6 +162,27 @@
     <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
       <Filter>source\Reflection</Filter>
     </ClCompile>
+    <ClCompile Include="source\shader.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\texture.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\resource_manager.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\imgui\imgui.h">
@@ -239,6 +233,18 @@
     <ClInclude Include="source\hierarchy.h">
       <Filter>headers</Filter>
     </ClInclude>
+    <ClInclude Include="source\shader.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="source\texture.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="source\resource_manager.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="source\stb_image.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore">
@@ -249,6 +255,12 @@
     </None>
     <None Include="generate_reflection.bat">
       <Filter>settings</Filter>
+    </None>
+    <None Include="shaders\sprite.frag">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="shaders\sprite.vs">
+      <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
 </Project>

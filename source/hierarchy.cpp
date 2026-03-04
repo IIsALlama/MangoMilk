@@ -108,7 +108,7 @@ namespace MangoMilk {
             {
                 ImGui::Text("Create New:");
                 if (ImGui::MenuItem("Entity")) { GameManager::Instantiate(new Entity("New Entity")); };
-                if (ImGui::MenuItem("Sprite")) { Entity* e = GameManager::Instantiate(new Entity("New Sprite")); e->AddComponent(new SpriteRenderer()); };
+                if (ImGui::MenuItem("Sprite")) { Entity* e = GameManager::Instantiate(new Entity("New Sprite")); e->AddComponent(new SpriteRenderer("mangomilk")); };
                 ImGui::EndPopup();
             }
 

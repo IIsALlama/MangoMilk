@@ -1,5 +1,6 @@
-export module Component;
 #include <typeinfo>
+
+export module Component;
 
 namespace MangoMilk {
 	

@@ -1,9 +1,9 @@
-export module Entity;
-
 #include <vector>
 using std::vector;
 
 #include <iostream>
+
+export module Entity;
 
 import Component;
 import Transform;

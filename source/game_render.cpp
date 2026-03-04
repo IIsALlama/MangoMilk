@@ -1,6 +1,8 @@
 
 #include "game_render.h"
 #include "game_manager.h"
+#include "resource_manager.h"
+#include "common.h"
 
 import Entity;
 import Transform;
@@ -44,6 +46,16 @@ namespace MangoMilk {
             glBindTexture(GL_TEXTURE_2D, 0);
             glBindRenderbuffer(GL_RENDERBUFFER, 0);
 
+            // load shaders
+            ResourceManager::LoadShader("shaders/sprite.vs", "shaders/sprite.frag", nullptr, "sprite");
+            // configure shaders
+            glm::mat4 projection = glm::ortho(0.0f, static_cast<float>(W),
+                static_cast<float>(H), 0.0f, -1.0f, 1.0f);
+            ResourceManager::GetShader("sprite").Use().SetInteger("image", 0);
+            ResourceManager::GetShader("sprite").SetMatrix4("projection", projection);
+
+            ResourceManager::LoadTexture("textures/mangomilk.png", true, "mangomilk");
+
             init = true;
         }
 
@@ -83,6 +95,9 @@ namespace MangoMilk {
             glBindRenderbuffer(GL_RENDERBUFFER, renderBuffer);
             glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, _w, _h);
             glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, renderBuffer);
+
+            //W = width;
+            //H = height;
         }
 
         void Render()
@@ -96,12 +111,13 @@ namespace MangoMilk {
                 SpriteRenderer* renderer = entity->GetComponent<SpriteRenderer>();
 
                 if (renderer != nullptr) {
-                    Vector2 pos = entity->transform->GetWorldPosition();
-                    Vector2 scale = entity->transform->scale;
+                    Vector2 pos = entity->transform->GetWorldPosition() * 100.0f;
+                    Vector2 scale = entity->transform->scale * 100.0f;
+                    float rot = entity->transform->rotation;
 
-                    glColor3f(renderer->colour.r, renderer->colour.g, renderer->colour.b);
+                    renderer->DrawSprite(renderer->texture, glm::vec2(pos.x + W/2.0f - scale.x/2.0f, pos.y + H/2.0f - scale.y/2.0f), glm::vec2(scale.x, scale.y), rot, glm::vec3(renderer->colour.r, renderer->colour.g, renderer->colour.b));
 
-                    glBegin(GL_TRIANGLES);
+                    /*glBegin(GL_TRIANGLES);
                     glVertex2f(pos.x-0.5f * scale.x, pos.y-0.5f * scale.y);
                     glVertex2f(pos.x-0.5f * scale.x, pos.y+0.5f * scale.y);
                     glVertex2f(pos.x+0.5f * scale.x, pos.y-0.5f * scale.y);
@@ -111,7 +127,7 @@ namespace MangoMilk {
                     glVertex2f(pos.x - 0.5f * scale.x, pos.y + 0.5f * scale.y);
                     glVertex2f(pos.x + 0.5f * scale.x, pos.y + 0.5f * scale.y);
                     glVertex2f(pos.x + 0.5f * scale.x, pos.y - 0.5f * scale.y);
-                    glEnd();
+                    glEnd();*/
                 }
             }
 

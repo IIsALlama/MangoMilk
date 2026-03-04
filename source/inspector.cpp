@@ -140,7 +140,7 @@ namespace MangoMilk {
                 if (ImGui::BeginPopupContextWindow("AddComponent", ImGuiButtonFlags_MouseButtonLeft))
                 {
                     ImGui::Text("Add Component:");
-                    if (ImGui::MenuItem("SpriteRenderer")) { selectedEntity->AddComponent(new SpriteRenderer()); };
+                    if (ImGui::MenuItem("SpriteRenderer")) { selectedEntity->AddComponent(new SpriteRenderer("mangomilk")); };
                     ImGui::EndPopup();
                 }
             }

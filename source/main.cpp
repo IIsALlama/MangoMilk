@@ -28,6 +28,7 @@ import SpriteRenderer;
 Colour colour_blue = Colour(0.0f, 0.0f, 1.0f);
 Colour colour_red = Colour(1.0f, 0.0f, 0.0f);
 Colour colour_green = Colour(0.0f, 1.0f, 0.0f);
+Colour colour_white = Colour(1.0f, 1.0f, 1.0f);
 
 GLFWwindow* window;
 Entity* selectedEntity = nullptr;
@@ -213,11 +214,12 @@ int main()
     Debug::LogError("Test Error");
 
     Entity* e1 = GameManager::Instantiate(new Entity("Big Square"));
-    SpriteRenderer* sp = new SpriteRenderer();
-    sp->colour = colour_blue;
+    SpriteRenderer* sp = new SpriteRenderer("mangomilk");
+    sp->colour = colour_white;
     e1->AddComponent(sp);
+    e1->transform->scale = Vector2(2.0f, 2.0f);
     Entity* e2 = GameManager::Instantiate(new Entity("Small Square"));
-    e2->AddComponent(new SpriteRenderer());
+    e2->AddComponent(new SpriteRenderer("mangomilk"));
     e2->transform->scale = Vector2(0.2f, 0.2f);
     e2->transform->position = Vector2(0.7f, 0.5f);
 

@@ -1,6 +1,6 @@
-export module Transform;
-
 #include <cassert>
+
+export module Transform;
 
 import Component;
 
@@ -121,6 +121,10 @@ namespace MangoMilk {
 
 		Vector2 operator+(const Vector2& vec) {
 			return Vector2(x + vec.x, y + vec.y);
+		}
+
+		Vector2 operator*(const float& f) {
+			return Vector2(x*f, y*f);
 		}
 	};
 
