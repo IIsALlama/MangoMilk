@@ -4,23 +4,54 @@
 #include "resource_manager.h"
 #include "common.h"
 
+#include <iostream>
+#include <filesystem>
+#include <string>
+#include <Windows.h>
+namespace fs = std::filesystem;
+
 import Entity;
 import Transform;
 import SpriteRenderer;
 
 using std::vector;
 
-GLsizei W = 800;
-GLsizei H = 600;
 
 unsigned int frameBuffer;
 unsigned int renderBuffer;
 
 namespace MangoMilk {
     namespace GameRender {
+        GLsizei W = 1920;
+        GLsizei H = 1080;
+
+        float aspect;
 
         bool init;
         unsigned int outputTexture;
+
+        static std::wstring getExePath() {
+            wchar_t buffer[MAX_PATH]; // Buffer to store the path
+            GetModuleFileNameW(NULL, buffer, MAX_PATH); // Retrieve the path
+            return std::wstring(buffer); // Convert to std::wstring
+        }
+
+        void LoadShaders() {
+            ResourceManager::LoadShader("shaders/sprite.vs", "shaders/sprite.frag", nullptr, "sprite");
+
+            glm::mat4 projection = glm::ortho(0.0f, static_cast<float>(W),
+                static_cast<float>(H), 0.0f, -1.0f, 1.0f);
+            ResourceManager::GetShader("sprite").Use().SetInteger("image", 0);
+            ResourceManager::GetShader("sprite").SetMatrix4("projection", projection);
+        }
+
+        void LoadTextures() {
+            fs::path texPath = fs::current_path() += "/textures";
+            for (const auto& entry : fs::directory_iterator(texPath)) {
+                std::string strPath = entry.path().string();
+                ResourceManager::LoadTexture(strPath.c_str(), true, strPath.substr(strPath.find_last_of("/\\") + 1));
+            }
+        }
 
         void Initialize()
         {
@@ -46,15 +77,10 @@ namespace MangoMilk {
             glBindTexture(GL_TEXTURE_2D, 0);
             glBindRenderbuffer(GL_RENDERBUFFER, 0);
 
-            // load shaders
-            ResourceManager::LoadShader("shaders/sprite.vs", "shaders/sprite.frag", nullptr, "sprite");
-            // configure shaders
-            glm::mat4 projection = glm::ortho(0.0f, static_cast<float>(W),
-                static_cast<float>(H), 0.0f, -1.0f, 1.0f);
-            ResourceManager::GetShader("sprite").Use().SetInteger("image", 0);
-            ResourceManager::GetShader("sprite").SetMatrix4("projection", projection);
+            aspect = (float)H / (float)W;
 
-            ResourceManager::LoadTexture("textures/mangomilk.png", true, "mangomilk");
+            LoadShaders();
+            LoadTextures();
 
             init = true;
         }
@@ -68,6 +94,8 @@ namespace MangoMilk {
             glDeleteFramebuffers(1, &frameBuffer);
             glDeleteTextures(1, &outputTexture);
             glDeleteRenderbuffers(1, &renderBuffer);
+
+            ResourceManager::Clear();
 
             init = false;
         }
@@ -95,9 +123,6 @@ namespace MangoMilk {
             glBindRenderbuffer(GL_RENDERBUFFER, renderBuffer);
             glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, _w, _h);
             glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, renderBuffer);
-
-            //W = width;
-            //H = height;
         }
 
         void Render()

@@ -117,6 +117,7 @@ void window_game_view()
 
     const float window_width = ImGui::GetContentRegionAvail().x;
     const float window_height = ImGui::GetContentRegionAvail().y;
+
     GameRender::Rescale(window_width, window_height);
 
     if (ImGui::Button("Play")) {
@@ -124,11 +125,27 @@ void window_game_view()
     }
 
     glViewport(0, 0, window_width, window_height);
+
     ImVec2 pos = ImGui::GetCursorScreenPos();
+    ImVec2 posMax;
+    float texWidth = window_height / GameRender::aspect;
+    float texHeight = window_width * GameRender::aspect;
+
+    if (window_width >= texWidth) {
+        float spacing = (window_width - texWidth) / 2.0f;
+        posMax = ImVec2(pos.x + window_width - spacing, pos.y + window_height);
+        pos.x += spacing;
+    }
+    else {
+        float spacing = (window_height - texHeight) / 2.0f;
+        posMax = ImVec2(pos.x + window_width, pos.y + window_height - spacing);
+        pos.y += spacing;
+    }
+
     ImGui::GetWindowDrawList()->AddImage(
         (void*)GameRender::outputTexture,
-        ImVec2(pos.x, pos.y),
-        ImVec2(pos.x + window_width, pos.y + window_height),
+        pos,
+        posMax,
         ImVec2(0, 1),
         ImVec2(1, 0)
     );
@@ -213,15 +230,16 @@ int main()
     Debug::LogWarning("Test Warning");
     Debug::LogError("Test Error");
 
-    Entity* e1 = GameManager::Instantiate(new Entity("Big Square"));
-    SpriteRenderer* sp = new SpriteRenderer("mangomilk");
+    Entity* e1 = GameManager::Instantiate(new Entity("Mango Milk"));
+    SpriteRenderer* sp = new SpriteRenderer("mangomilk.png");
     sp->colour = colour_white;
     e1->AddComponent(sp);
     e1->transform->scale = Vector2(2.0f, 2.0f);
-    Entity* e2 = GameManager::Instantiate(new Entity("Small Square"));
-    e2->AddComponent(new SpriteRenderer("mangomilk"));
-    e2->transform->scale = Vector2(0.2f, 0.2f);
-    e2->transform->position = Vector2(0.7f, 0.5f);
+
+    Entity* e2 = GameManager::Instantiate(new Entity("Stupid Looking Kitten"));
+    e2->AddComponent(new SpriteRenderer("stupid_looking_kitten.jpg"));
+    e2->transform->scale = Vector2(3.0f, 3.0f);
+    e2->transform->position = Vector2(3.0f, 0.0f);
 
     e1->transform->AddChild(e2->transform);
 

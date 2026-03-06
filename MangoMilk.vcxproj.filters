@@ -87,21 +87,6 @@
     <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
@@ -181,6 +166,15 @@
       <Filter>source\Reflection</Filter>
     </ClCompile>
     <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
       <Filter>source\Reflection</Filter>
     </ClCompile>
   </ItemGroup>

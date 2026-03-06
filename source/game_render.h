@@ -5,6 +5,9 @@
 namespace MangoMilk {
 	namespace GameRender {
 		extern unsigned int outputTexture;
+		extern GLsizei W;
+		extern GLsizei H;
+		extern float aspect;
 
 		void Initialize();
 		void Terminate();
