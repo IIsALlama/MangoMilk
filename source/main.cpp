@@ -13,6 +13,7 @@
 #include "game_render.h"
 #include "inspector.h"
 #include "hierarchy.h"
+#include "scene_manager.h"
 
 using namespace MangoMilk;
 using namespace Neat;
@@ -81,6 +82,7 @@ int Initialize() // Initialize Libraries
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init();
     GameRender::Initialize();
+    SceneManager::Initialize();
 
     return 0;
 }
@@ -193,6 +195,22 @@ void window_menubar() {
             }
             ImGui::EndMenu();
         }
+        if (ImGui::BeginMenu("Scene")) {
+            if (ImGui::MenuItem("Create Scene")) {
+                SceneManager::NewScene();
+            }
+
+            std::vector<Scene*> scenes = SceneManager::GetScenes();
+            for (size_t i = 0; i < scenes.size(); i++)
+            {
+                ImGui::PushID(i);
+                if (ImGui::MenuItem(scenes[i]->sceneName.c_str())) {
+                    SceneManager::OpenScene(i);
+                }
+                ImGui::PopID();
+            }
+            ImGui::EndMenu();
+        }
         ImGui::EndMainMenuBar();
     }
 }
@@ -242,6 +260,8 @@ int main()
     e2->transform->position = Vector2(3.0f, 0.0f);
 
     e1->transform->AddChild(e2->transform);
+
+    SceneManager::SaveCurrentScene();
 
     GetComponentTypes();
     // Render Loop

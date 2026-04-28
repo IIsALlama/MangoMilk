@@ -93,13 +93,7 @@
     <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="Generated\MangoMilk.ixx_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\Transform.ixx_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="source\Entity.cppm">
@@ -128,9 +122,6 @@
     </ClCompile>
     <ClCompile Include="source\hierarchy.cpp">
       <Filter>source\Windows</Filter>
-    </ClCompile>
-    <ClCompile Include="source\scene.cpp">
-      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="Generated\Component.cppm_Reflection.cpp">
       <Filter>source\Reflection</Filter>
@@ -176,6 +167,12 @@
     </ClCompile>
     <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
       <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="source\project_manager.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\scene_manager.cpp">
+      <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +235,9 @@
     </ClInclude>
     <ClInclude Include="source\stb_image.h">
       <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="source\scene_manager.h">
+      <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

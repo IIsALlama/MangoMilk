@@ -158,11 +158,12 @@ generate_reflection.bat</Command>
     <ClCompile Include="source\inspector.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\MangoMilk.cppm" />
+    <ClCompile Include="source\project_manager.cpp" />
     <ClCompile Include="source\resource_manager.cpp" />
+    <ClCompile Include="source\scene_manager.cpp" />
     <ClCompile Include="source\shader.cpp" />
     <ClCompile Include="source\texture.cpp" />
     <ClCompile Include="source\Transform.cppm" />
-    <ClCompile Include="source\scene.cpp" />
     <ClCompile Include="source\settings.cpp" />
     <ClCompile Include="source\SpriteRenderer.cppm" />
     <ClCompile Include="source\time.cpp" />
@@ -184,6 +185,7 @@ generate_reflection.bat</Command>
     <ClInclude Include="source\hierarchy.h" />
     <ClInclude Include="source\inspector.h" />
     <ClInclude Include="source\resource_manager.h" />
+    <ClInclude Include="source\scene_manager.h" />
     <ClInclude Include="source\shader.h" />
     <ClInclude Include="source\stb_image.h" />
     <ClInclude Include="source\texture.h" />
