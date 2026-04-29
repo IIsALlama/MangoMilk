@@ -1,9 +1,11 @@
-#include <vector>
-using std::vector;
-
-#include <iostream>
-
 export module Entity;
+
+//import <iostream>;
+//import <vector>;
+//using std::vector;
+
+import std;
+using std::vector;
 
 import Component;
 import Transform;

@@ -14,6 +14,7 @@
 #include "inspector.h"
 #include "hierarchy.h"
 #include "scene_manager.h"
+#include "project_manager.h"
 
 using namespace MangoMilk;
 using namespace Neat;
@@ -83,6 +84,7 @@ int Initialize() // Initialize Libraries
     ImGui_ImplOpenGL3_Init();
     GameRender::Initialize();
     SceneManager::Initialize();
+    ProjectManager::Initialize();
 
     return 0;
 }
@@ -206,6 +208,22 @@ void window_menubar() {
                 ImGui::PushID(i);
                 if (ImGui::MenuItem(scenes[i]->sceneName.c_str())) {
                     SceneManager::OpenScene(i);
+                }
+                ImGui::PopID();
+            }
+            ImGui::EndMenu();
+        }
+        if (ImGui::BeginMenu("Projects")) {
+            if (ImGui::MenuItem("Create Project")) {
+                ProjectManager::NewProject("New Project");
+            }
+
+            auto projects = ProjectManager::GetProjects();
+            for (size_t i = 0; i < projects.size(); i++)
+            {
+                ImGui::PushID(i);
+                if (ImGui::MenuItem(projects[i].filename().string().c_str())) {
+                    ProjectManager::OpenProject(projects[i]);
                 }
                 ImGui::PopID();
             }

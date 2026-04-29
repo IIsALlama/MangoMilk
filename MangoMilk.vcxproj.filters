@@ -84,26 +84,11 @@
     <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="source\Entity.cppm">
       <Filter>source\Modules</Filter>
     </ClCompile>
     <ClCompile Include="source\SpriteRenderer.cppm">
       <Filter>source\Modules</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp">
-      <Filter>source\Reflection</Filter>
     </ClCompile>
     <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
       <Filter>source\Reflection</Filter>
@@ -122,9 +107,6 @@
     </ClCompile>
     <ClCompile Include="source\hierarchy.cpp">
       <Filter>source\Windows</Filter>
-    </ClCompile>
-    <ClCompile Include="Generated\Component.cppm_Reflection.cpp">
-      <Filter>source\Reflection</Filter>
     </ClCompile>
     <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
       <Filter>source\Reflection</Filter>
@@ -173,6 +155,27 @@
     </ClCompile>
     <ClCompile Include="source\scene_manager.cpp">
       <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Component.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Entity.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
+    </ClCompile>
+    <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
+      <Filter>source\Reflection</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -237,6 +240,9 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="source\scene_manager.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="source\project_manager.h">
       <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>

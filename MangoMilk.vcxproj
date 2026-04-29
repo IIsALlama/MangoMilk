@@ -105,8 +105,11 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include\GLFW\include;$(ProjectDir)include\GLEW\include;$(ProjectDir)include\GLM;$(ProjectDir)include\imgui;$(ProjectDir)include\imgui\backends;$(ProjectDir)include\Generated;$(ProjectDir)include\NeatReflection\include;$(ProjectDir)include\NeatReflection\src;$(ProjectDir)include\reflect-cpp\src;$(ProjectDir)include\reflect-cpp\include;$(ProjectDir)include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)include\GLFW\include;$(ProjectDir)include\GLEW\include;$(ProjectDir)include\GLM;$(ProjectDir)include\imgui;$(ProjectDir)include\imgui\backends;$(ProjectDir)include\Generated;$(ProjectDir)include\NeatReflection\include;$(ProjectDir)include\NeatReflection\src;$(ProjectDir)include\reflect-cpp\src;$(ProjectDir)include\reflect-cpp\include;$(ProjectDir)include\;$(ProjectDir)include\json\single_include\nlohmann;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <EnableModules>true</EnableModules>
+      <CompileAs>Default</CompileAs>
+      <BuildStlModules>true</BuildStlModules>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,6 +142,7 @@ generate_reflection.bat</Command>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Generated\Component.cppm_Reflection.cpp" />
+    <ClCompile Include="Generated\Entity.cppm_Reflection.cpp" />
     <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp" />
     <ClCompile Include="Generated\SpriteRenderer.cppm_Reflection.cpp" />
     <ClCompile Include="Generated\Transform.cppm_Reflection.cpp" />
@@ -184,6 +188,7 @@ generate_reflection.bat</Command>
     <ClInclude Include="source\game_render.h" />
     <ClInclude Include="source\hierarchy.h" />
     <ClInclude Include="source\inspector.h" />
+    <ClInclude Include="source\project_manager.h" />
     <ClInclude Include="source\resource_manager.h" />
     <ClInclude Include="source\scene_manager.h" />
     <ClInclude Include="source\shader.h" />
