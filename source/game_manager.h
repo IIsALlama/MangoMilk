@@ -7,6 +7,10 @@ namespace MangoMilk {
 	namespace GameManager {
 
 		void GameLoop();
+		bool IsGameRunning();
+		void StartGame();
+		void PauseGame();
+		void QuitGame();
 
 		Entity* Instantiate(Entity* e);
 

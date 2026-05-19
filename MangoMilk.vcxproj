@@ -162,6 +162,7 @@ generate_reflection.bat</Command>
     <ClCompile Include="source\inspector.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\MangoMilk.cppm" />
+    <ClCompile Include="source\PlayerController.cppm" />
     <ClCompile Include="source\project_manager.cpp" />
     <ClCompile Include="source\resource_manager.cpp" />
     <ClCompile Include="source\scene_manager.cpp" />

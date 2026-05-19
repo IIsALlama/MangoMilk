@@ -21,7 +21,7 @@ namespace MangoMilk {
 			return static_cast<T*>(ownerPtr);
 		}
 
-		void Update() {
+		virtual void Update() {
 
 		}
 	};

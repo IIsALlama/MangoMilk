@@ -6,6 +6,8 @@ import Entity;
 
 namespace MangoMilk {
 	namespace GameManager {
+		bool gameRunning = false;
+		
 		std::vector<Entity*> entities;
 
 		Entity* Instantiate(Entity* e) {
@@ -23,6 +25,29 @@ namespace MangoMilk {
 
 		void GameLoop() {
 			GameRender::Render();
+
+			if (gameRunning) {
+				for (size_t i = 0; i < entities.size(); i++)
+				{
+					entities[i]->UpdateComponents();
+				}
+			}
+		}
+
+		bool IsGameRunning() {
+			return gameRunning;
+		}
+
+		void StartGame() {
+			gameRunning = true;
+		}
+
+		void PauseGame() {
+
+		}
+
+		void QuitGame() {
+			gameRunning = false;
 		}
 	}
 }

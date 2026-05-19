@@ -177,6 +177,9 @@
     <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
       <Filter>source\Reflection</Filter>
     </ClCompile>
+    <ClCompile Include="source\PlayerController.cppm">
+      <Filter>source\Modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\imgui\imgui.h">

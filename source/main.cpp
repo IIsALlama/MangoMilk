@@ -26,6 +26,7 @@ import Transform;
 import Component;
 import Entity;
 import SpriteRenderer;
+import PlayerController;
 
 Colour colour_blue = Colour(0.0f, 0.0f, 1.0f);
 Colour colour_red = Colour(1.0f, 0.0f, 0.0f);
@@ -108,11 +109,13 @@ void window_assets()
 }
 
 void OnPlay() {
-    
+    GameManager::StartGame();
+    Debug::Log("Game Started");
 }
 
 void OnStop() {
-    
+    GameManager::QuitGame();
+    Debug::Log("Game Stopped");
 }
 
 void window_game_view() 
@@ -124,8 +127,15 @@ void window_game_view()
 
     GameRender::Rescale(window_width, window_height);
 
-    if (ImGui::Button("Play")) {
-        OnPlay();
+    if (!GameManager::IsGameRunning()) {
+        if (ImGui::Button("Play")) {
+            OnPlay();
+        }
+    }
+    else {
+        if (ImGui::Button("Stop")) {
+            OnStop();
+        }
     }
 
     glViewport(0, 0, window_width, window_height);
@@ -276,6 +286,8 @@ int main()
     e2->AddComponent(new SpriteRenderer("stupid_looking_kitten.jpg"));
     e2->transform->scale = Vector2(3.0f, 3.0f);
     e2->transform->position = Vector2(3.0f, 0.0f);
+
+    e2->AddComponent(new PlayerController());
 
     e1->transform->AddChild(e2->transform);
 
