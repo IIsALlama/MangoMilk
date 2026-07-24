@@ -1,4 +1,5 @@
 #include "project_manager.h"
+#include "debugging.h"
 
 #include <iostream>
 #include <filesystem>
@@ -49,10 +50,15 @@ namespace MangoMilk {
 		}
 
 		void LoadProjects() {
-			fs::path path = fs::current_path() / "Projects";
-			for (const auto& entry : fs::directory_iterator(path)) {
-				projects.push_back(entry.path());
+			/*try {
+				fs::path path = fs::current_path() / "Projects";
+				for (const auto& entry : fs::directory_iterator(path)) {
+					projects.push_back(entry.path());
+				}
 			}
+			catch (int error) {
+				Debug::LogError("Failed to load projects");
+			}*/
 		}
 
 		std::vector<fs::path> GetProjects() {

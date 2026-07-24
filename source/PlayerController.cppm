@@ -1,19 +1,12 @@
-#include "debugging.h"
-
+#include "mangomilk.h"
 export module PlayerController;
-import Component;
-import Entity;
-using namespace MangoMilk;
 
-
-export class PlayerController : public Component
+export class PlayerController : public MangoMilkComponent
 {
 private:
 
 public:
 	void Update() {
-		Debug::Log("Wahooo!");
-
-		CastOwnerPtr<Entity>()->transform->position.x += 0.1f;
+		GetEntity()->transform->position.x += 0.001f * GameManager::DeltaTime();
 	};
 };

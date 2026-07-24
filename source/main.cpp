@@ -164,6 +164,20 @@ void window_game_view()
         ImVec2(1, 0)
     );
 
+    ImGuiIO& io = ImGui::GetIO();
+
+    if (ImGui::IsKeyPressed(ImGuiKey_UpArrow)) {
+        Debug::Log("Up");
+    }
+    if (ImGui::IsKeyPressed(ImGuiKey_DownArrow)) {
+        
+    }
+    if (ImGui::IsKeyPressed(ImGuiKey_LeftArrow)) {
+        
+    }
+    if (ImGui::IsKeyPressed(ImGuiKey_RightArrow)) {
+        
+    }
 
     ImGui::End();
 }
@@ -326,8 +340,6 @@ int main()
         ImGui::Render();
 
         GameManager::GameLoop();
-
-        //Debug::Log("AAQAA");
 
         // End Of Render Loop
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

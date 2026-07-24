@@ -103,14 +103,20 @@ namespace MangoMilk {
 
             //Get reflection data
             const Type* type = Neat::get_type(componentName);
-            AnyPtr typePtr{ component, type->id };
 
-            //Show Fields
-            for (size_t i = 0; i < type->fields.size(); i++)
-            {
-                ShowField(&type->fields[i], typePtr);
+            if (type == nullptr) { //ERROR: Missing component reflection data
+                ImGui::TextColored(ImVec4(1.0f, 0.0f, 0.0f, 1.0f), "Missing component reflection data");
             }
+            else {
+                AnyPtr typePtr{ component, type->id };
 
+                //Show Fields
+                for (size_t i = 0; i < type->fields.size(); i++)
+                {
+                    ShowField(&type->fields[i], typePtr);
+                }
+            }
+            
             ImGui::EndGroup(); //IMGUI GROUP END
 
             ImGui::Dummy(ImVec2(0.0f, 10.0f)); //IMGUI SPACING

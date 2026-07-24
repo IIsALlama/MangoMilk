@@ -12,6 +12,8 @@ namespace MangoMilk {
 		void PauseGame();
 		void QuitGame();
 
+		float DeltaTime();
+
 		Entity* Instantiate(Entity* e);
 
 		std::vector<Entity*> GetEntities();
