@@ -62,7 +62,7 @@ namespace MangoMilk {
 
 		void StartGame() {
 			gameRunning = true;
-			CopyGameState();
+			//CopyGameState();
 		}
 
 		void PauseGame() {
@@ -71,7 +71,7 @@ namespace MangoMilk {
 
 		void QuitGame() {
 			gameRunning = false;
-			entities = copiedEntities;
+			//entities = copiedEntities;
 		}
 	}
 }

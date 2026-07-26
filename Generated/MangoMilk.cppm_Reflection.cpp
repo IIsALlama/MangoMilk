@@ -1,7 +1,7 @@
 module;
 #include "Neat/Reflection.h"
 #include "Neat/TemplateTypeId.h"
-module PlayerController;
+module MangoMilk;
 
 // ================================================================================
 //                      AUTO GENERATED REFLECTION DATA FILE 
@@ -14,15 +14,6 @@ namespace Neat
 {
 	static void reflect_types_and_members()
 	{
-add_type(Type{ .name="void", .id=get_id<void>(), .size=0 });
-add_type(Type{ .name="float", .id=get_id<float>(), .size=sizeof(float) });
-add_type(Type::create<PlayerController>("PlayerController", get_id<PlayerController>(),
-	{  },
-	{ Field::create<PlayerController, float, &PlayerController::speed>("speed", Neat::Access::Public),  },
-	{ Method::create<(void (PlayerController::*)() )&PlayerController::Update, PlayerController, void>("Update", Neat::Access::Public),  },
-	{  },
-	{  }
-));
 
 	}
 

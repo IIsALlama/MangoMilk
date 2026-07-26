@@ -84,9 +84,6 @@
     <ClCompile Include="source\SpriteRenderer.cppm">
       <Filter>source\Modules</Filter>
     </ClCompile>
-    <ClCompile Include="Generated\MangoMilk.cppm_Reflection.cpp">
-      <Filter>source\Reflection</Filter>
-    </ClCompile>
     <ClCompile Include="Generated\Transform.cppm_Reflection.cpp">
       <Filter>source\Reflection</Filter>
     </ClCompile>
