@@ -12,3 +12,4 @@ public:
 		GetEntity()->transform->position.x += (speed / 1000.0f) * GameManager::DeltaTime();
 	};
 };
+
